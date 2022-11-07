@@ -1,1 +1,1 @@
-uuuuutuututuut
+print("Hej")
