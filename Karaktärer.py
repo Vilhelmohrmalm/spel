@@ -15,3 +15,4 @@ class monster():
 
 slime= monster(1-4, 1-2)
 goblin= monster(1-3, 2-4)
+print("hej")
