@@ -1,21 +1,5 @@
+
 import random
-
-class karaktär():
-    def _init_(self, p_hp, p_str):
-        self.p_hp=p_hp
-        self.p_str=p_str
-
-assasin= karaktär(5, 10)
-barb= karaktär(8, 7)
-knight= karaktär(10, 5)
-
-class monster():
-    def _init_(self, m_hp, m_str):
-        self.m_hp=m_hp
-        self.m_str=m_str
-
-slime= monster( m_health(4,11), m_damage(1,6))
-goblin= monster( m_health(3,7), m_damage(3,8))
 
 def m_health(a,b):
     health=[]
@@ -28,4 +12,25 @@ def m_damage(a,b):
     for i in range(a,b+1):
         damage.append(i)
     return(random.choice(damage))
+
+class karaktär():
+    def __init__(self, p_hp, spe, p_str):
+        self.p_hp=p_hp
+        self.spe=spe
+        self.p_str=p_str
+
+# h
+
+class monster():
+    def __init__(self, m_hp, m_str, namn):
+        self.namn = namn
+        self.m_hp=m_hp
+        self.m_str=m_str
+
+    def __str__(self):
+        return f"Det här är en {self.namn}, den har {self.m_hp} hp och {self.m_str} styrka"
+
+
+slime= monster(m_health(1,4), m_damage(1,2), "slime")
+goblin= monster(m_health(1,3), m_damage(2,4), "goblin")
 
