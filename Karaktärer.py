@@ -38,4 +38,5 @@ Goblin= Monster(m_health(3,7), m_damage(3,8), "goblin")
 Assasin= Karaktär(5, 10, "assasin")
 Barb= Karaktär(8, 7, "barb")
 Knight= Karaktär(10, 5, "knight")
+hej 
 
