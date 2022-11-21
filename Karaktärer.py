@@ -32,11 +32,11 @@ class Monster():
         return f"Du stöter på en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka"
 
 
-Slime= Monster(m_health(4,11), m_damage(1,6), "slime")
-Goblin= Monster(m_health(3,7), m_damage(3,8), "goblin")
+Slime= Monster(m_health(4,11), m_damage(1,6), "Slime")
+Goblin= Monster(m_health(3,7), m_damage(3,8), "Goblin")
 
 Assasin= Karaktär(5, 10, "assasin")
-Barb= Karaktär(8, 7, "barb")
-Knight= Karaktär(10, 5, "knight")
+Barb= Karaktär(8, 7, "Barb")
+Knight= Karaktär(10, 5, "Knight")
 
 
