@@ -23,7 +23,7 @@ class karaktär():
 
 class monster():
     def __init__(self, m_hp, m_str,m_namn):
-        self.namn =m_namn
+        self.m_namn =m_namn
         self.m_hp=m_hp
         self.m_str=m_str
 
