@@ -28,7 +28,7 @@ class monster():
         self.m_str=m_str
 
     def __str__(self):
-        return f"Det här är en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka"
+        return (f"Det här är en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka")
 
 
 slime= monster(m_health(4,11), m_damage(1,6), "slime")
