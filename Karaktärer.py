@@ -40,3 +40,4 @@ Barb= Karaktär(8, 7, "Barb")
 Knight= Karaktär(10, 5, "Knight")
 
 
+
