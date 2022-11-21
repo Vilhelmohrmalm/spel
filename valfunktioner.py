@@ -14,4 +14,3 @@ def val():
         print("du knyter dina nävar och gör dig redo...")
     else:
         print("din sopa välj ett av alternativen")
-ja
