@@ -1,7 +1,7 @@
 
 def val_vanlig():
     val = input(
-        "vad vill du göra?\n S = stats\n  V = vänster\n H = höger\n ")
+        "vad vill du göra?\n S = stats\n  V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         print("din stats är dina stats")
     elif val == "V" or val == "vänster" or val == "v":
@@ -10,6 +10,8 @@ def val_vanlig():
         print("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":
         print("du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
+    elif val == "R" or val == "ryggsäck" or val == "r":
+        print("hej")
     else:
         print("din sopa välj ett av alternativen")
         val_vanlig()
@@ -31,3 +33,4 @@ def val_kista():
     else:
         print("din sopa välj ett av alternativen")
         val_kista()
+

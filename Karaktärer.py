@@ -39,5 +39,8 @@ Assasin= Karaktär(5, 10, "assasin")
 Barb= Karaktär(8, 7, "Barb")
 Knight= Karaktär(10, 5, "Knight")
 
-
+class Stats():
+    def __init__(self, s_hp, s_str):
+        self.s_hp
+        self.s_str
 

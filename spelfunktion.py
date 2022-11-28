@@ -16,15 +16,15 @@ def karaktärsval():
     if namn == 1:
         Spelar_stats = (Assasin)
         print(" Du är nu en Assasin med 5 hp och 10 str")
-        return
+        
     elif namn == 2:
         Spelar_stats = (Barb)
         print(" Du är nu en Barbarian med 8 hp och 7 str")
-        return
+        
     elif namn == 3:
         Spelar_stats =(Knight)
         print(" Du är nu en Knight med 10 hp och 5 str")
-        return
+        
     else: 
         print("svara 1, 2 eller 3 din sopa")  
         karaktärsval()
@@ -40,6 +40,8 @@ def main():
     """)
 
     karaktärsval()
+
+    val_vanlig()
 
     
 main()
