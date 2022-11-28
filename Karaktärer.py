@@ -1,4 +1,4 @@
-
+from text_animering import *
 import random
 
 def m_health(a,b):
@@ -20,7 +20,7 @@ class Karaktär():
         self.p_namn=p_namn
 
     def print_stats(self):
-        print(f"Din hp är {self.p_hp} och din str är {self.p_str}")
+        typingPrint(f"Din hp är {self.p_hp} och din str är {self.p_str}")
         
 
 
