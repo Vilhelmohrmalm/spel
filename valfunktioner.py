@@ -1,8 +1,9 @@
 from text_animering import *
 
+
 def val_vanlig(stats):
     val = typingInput(
-        "vad vill du göra?\n S = stats\n  V = vänster\n H = höger\n R = ryggsäck\n")
+        "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         typingPrint("din stats är dina stats")
         stats.print_stats()
@@ -11,14 +12,15 @@ def val_vanlig(stats):
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":
-        typingPrint("du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
+        typingPrint(
+            "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
     elif val == "R" or val == "ryggsäck" or val == "r":
         typingPrint("hej")
     else:
         typingPrint("din sopa välj ett av alternativen")
         val_vanlig()
 
-        
+
 def val_kista():
     val = typingInput(
         "vad vill du göra?\n S = stats\n Ö = öppna\n V = vänster\n H = höger\n ")
@@ -30,9 +32,9 @@ def val_kista():
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":
-        typingPrint("du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
+        typingPrint(
+            "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
         val_vanlig()
     else:
         typingPrint("din sopa välj ett av alternativen")
         val_kista()
-
