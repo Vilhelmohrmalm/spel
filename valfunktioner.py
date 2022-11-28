@@ -34,8 +34,3 @@ def val_kista():
         print("din sopa välj ett av alternativen")
         val_kista()
 
-def main():
-    val_vanlig()
-
-
-main()
