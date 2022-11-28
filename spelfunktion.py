@@ -28,7 +28,7 @@ def karaktärsval():
     else: 
         print("svara 1, 2 eller 3 din sopa")  
         karaktärsval()
-       
+    return(Spelar_stats)
 
 
 def main():
@@ -39,9 +39,9 @@ def main():
     Han har en slimekapasitet på 100%.
     """)
 
-    karaktärsval()
+    stats = karaktärsval()
 
-    val_vanlig()
+    val_vanlig(stats)
 
     
 main()

@@ -1,9 +1,10 @@
 
-def val_vanlig():
+def val_vanlig(stats):
     val = input(
         "vad vill du göra?\n S = stats\n  V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         print("din stats är dina stats")
+        stats.print_stats()
     elif val == "V" or val == "vänster" or val == "v":
         print("du gick igen om dörren till vänster och kommer till...")
     elif val == "H" or val == "höger" or val == "h":
