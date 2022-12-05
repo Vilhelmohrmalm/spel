@@ -1,8 +1,7 @@
 def fight(m_hp, m_str, p_hp, p_str):
     if p_str >= m_hp:
         print("du besegrade monstret")
-        
-        return
+        return(p_hp)
     elif p_str < m_hp and m_str >= p_hp:
         print("du dog")
     elif p_str < m_hp and m_str < p_hp:

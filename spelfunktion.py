@@ -44,6 +44,6 @@ def main():
     stats = karaktärsval()
 
     val_vanlig(stats)
-
+    
     
 main()
