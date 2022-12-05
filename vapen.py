@@ -8,5 +8,5 @@ class Vapen():
         self.v_str = v_str
 
 
-Svärd = Vapen(health(0, 1), damage(1, 4), "svärd")
-Sköld = Vapen(health(2, 3), damage(0, 1), "sköld")
+Svärd = Vapen(health(0, 1), damage(1, 4), "Svärd")
+Sköld = Vapen(health(2, 3), damage(0, 1), "Sköld")
