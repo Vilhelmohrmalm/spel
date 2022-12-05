@@ -1,6 +1,8 @@
 from valfunktioner import *
 from Karaktärer import *
 from text_animering import *
+from vapen import *
+from fight import *
 
 
 def karaktärsval():
