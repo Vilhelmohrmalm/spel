@@ -10,6 +10,3 @@ class Vapen():
 
 Svärd = Vapen(health(0, 1), damage(1, 4), "Svärd")
 Sköld = Vapen(health(2, 3), damage(0, 1), "Sköld")
-
-print("hej")
-print("hej")
