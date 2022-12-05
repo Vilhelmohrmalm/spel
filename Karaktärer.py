@@ -1,5 +1,5 @@
 from text_animering import *
-import random
+import random 
 
 
 def health(a, b):
@@ -23,7 +23,7 @@ class Karaktär():
         self.p_namn = p_namn
 
     def print_stats(self):
-        typingPrint(f"Din hp är {self.p_hp} och din str är {self.p_str}")
+        typingPrint(f". Din hp är {self.p_hp} och din str är {self.p_str}\n")
 
 
 class Monster():
