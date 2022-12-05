@@ -1,5 +1,6 @@
 from text_animering import *
-
+from fight import *
+from Karaktärer import *
 
 def val_vanlig(stats):
     val = typingInput(
@@ -9,6 +10,7 @@ def val_vanlig(stats):
         stats.print_stats()
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")
+        p_hp=fight(10, 5, p_hp, p_str)
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":

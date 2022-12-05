@@ -45,5 +45,5 @@ def main():
 
     val_vanlig(stats)
 
-
+    
 main()
