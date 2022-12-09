@@ -17,7 +17,10 @@ class karaktär():
     def __init__(self, p_hp, p_str,p_namn):
         self.p_hp=p_hp
         self.p_str=p_str
-        self.p_namn=p_namn
+        self.p_namn=p_namn  
+
+    def __str__(self):
+        return (f"Det här är en {self.p_namn}, den har {self.p_hp} hp och {self.p_str} styrka")
 
 # h
 
@@ -34,6 +37,9 @@ class monster():
 slime= monster(m_health(4,11), m_damage(1,6), "slime")
 goblin= monster(m_health(1,3), m_damage(2,4), "goblin")
 
+Assasin = karaktär(5, 10, "assasin")
+Barb = karaktär(8, 7, "Barb")
+Knight = karaktär(10, 5, "Knight")
 
 
 
@@ -41,5 +47,7 @@ goblin= monster(m_health(1,3), m_damage(2,4), "goblin")
 def main():
     print(slime)
     print(goblin)
-
+    print(Assasin)
+    print(Barb)
+    print(Knight)
 main()

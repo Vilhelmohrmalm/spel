@@ -6,12 +6,12 @@ def val_vanlig(stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint("din stats är dina stats")
-        stats.print_stats()
+        typingPrint(stats.print_stats())
+        val_vanlig(stats)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")
         x=(fight(10, 5, 10,5 ))
-        stats = Karaktär(p_hp-x, p_str, p_namn)
+        
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":

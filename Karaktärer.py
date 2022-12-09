@@ -23,7 +23,7 @@ class Karaktär():
         self.p_namn = p_namn
 
     def print_stats(self):
-        typingPrint(f". Din hp är {self.p_hp} och din str är {self.p_str}\n")
+        return f". Din hp är {self.p_hp} och din str är {self.p_str}"
 
 
 class Monster():
@@ -42,3 +42,4 @@ Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 Assasin = Karaktär(5, 10, "assasin")
 Barb = Karaktär(8, 7, "Barb")
 Knight = Karaktär(10, 5, "Knight")
+
