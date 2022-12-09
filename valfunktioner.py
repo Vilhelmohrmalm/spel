@@ -2,12 +2,12 @@ from text_animering import *
 from fight import *
 from Karaktärer import *
 
-def val_vanlig(stats):
+def val_vanlig(p_hp, p_str):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint(stats.print_stats())
-        val_vanlig(stats)
+        typingPrint(f"{pstats(p_hp, p_str)}")
+        val_vanlig(p_hp, p_str)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")
         x=(fight(10, 5, 10,5 ))

@@ -41,9 +41,9 @@ def main():
     Han har en slimekapasitet på 100%.
     """)
 
-    stats = karaktärsval()
+    karaktärsval()
 
-    val_vanlig(stats)
+    val_vanlig()
     
     
 main()
