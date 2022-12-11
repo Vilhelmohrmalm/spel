@@ -1,5 +1,6 @@
 from spelfunktion import *
 from vapen import *
+from Karaktärer import *
 
 
 def kista(Spelar_stats):
@@ -29,3 +30,10 @@ def rum_typ():
         val_kista()
     elif typ == 10:
         fälla()
+        val_vanlig()
+
+
+def fälla(p_hp):
+    p_hp -= 1
+    typingPrint("du klev i en fälla, du har nu {p_hp} hp kvar")
+    return p_hp
