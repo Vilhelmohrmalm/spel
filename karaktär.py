@@ -17,7 +17,7 @@ def damage(a, b):
     return (random.choice(damage))
 
 
-class Karaktär():
+class Karaktärer():
     def __init__(self, p_hp, p_str, p_namn):
         self.p_hp = p_hp
         self.p_str = p_str
@@ -38,7 +38,7 @@ class Monster():
 Slime = Monster(health(4, 11), damage(1, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 
-Assasin = Karaktär(5, 10, "assasin")
-Barb = Karaktär(8, 7, "Barb")
-Knight = Karaktär(10, 5, "Knight")
+Assasin = Karaktärer(5, 10, "assasin")
+Barb = Karaktärer(8, 7, "Barb")
+Knight = Karaktärer(10, 5, "Knight")
 

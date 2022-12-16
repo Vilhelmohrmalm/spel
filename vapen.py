@@ -1,4 +1,4 @@
-from Karaktärer import *
+from karaktär import *
 
 
 class Vapen():
