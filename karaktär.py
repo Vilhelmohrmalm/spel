@@ -1,7 +1,8 @@
 from text_animering import *
-import random 
+import random
 from valfunktioner import *
-from fight import*
+from fight import *
+
 
 def health(a, b):
     health = []
@@ -22,7 +23,7 @@ class Karaktärer():
         self.p_hp = p_hp
         self.p_str = p_str
         self.p_namn = p_namn
-
+        self.vapen_lista = []
 
 
 class Monster():
@@ -41,4 +42,3 @@ Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 Assasin = Karaktärer(5, 10, "assasin")
 Barb = Karaktärer(8, 7, "Barb")
 Knight = Karaktärer(10, 5, "Knight")
-

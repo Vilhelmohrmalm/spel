@@ -30,7 +30,7 @@ def karaktärsval():
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
         karaktärsval()
-    
+
     return (Spelar_stats)
 
 
@@ -44,5 +44,7 @@ def main():
 
     karaktärsval()
 
-    val_vanlig(p_hp, p_str) 
+    val_vanlig(Spelar_stats)
+
+
 main()

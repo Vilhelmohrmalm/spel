@@ -1,6 +1,6 @@
 from spelfunktion import *
 from vapen import *
-from Karaktärer import *
+from karaktär import *
 
 
 def kista(Spelar_stats, v_hp, v_str, v_namn):
