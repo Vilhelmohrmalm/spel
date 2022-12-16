@@ -1,5 +1,6 @@
 from text_animering import *
 import random 
+from valfunktioner import *
 
 
 def health(a, b):
@@ -21,9 +22,9 @@ class Karaktär():
         self.p_hp = p_hp
         self.p_str = p_str
         self.p_namn = p_namn
-
-    def print_stats(self):
-        return f". Din hp är {self.p_hp} och din str är {self.p_str}"
+        
+    def pstats(p_hp, p_str):
+        return f"Din hp är {p_hp} och din str är {p_str}"
 
 
 class Monster():
