@@ -3,11 +3,11 @@ from fight import *
 from Karaktärer import *
 
 
-def val_vanlig(p_hp,p_str):
+def val_vanlig(p_hp, p_str):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint(f"Din hp är {p_hp} och din str är {p_str}")
+        typingPrint(f"{pstats(p_hp, p_str)}")
         val_vanlig(p_hp, p_str)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")

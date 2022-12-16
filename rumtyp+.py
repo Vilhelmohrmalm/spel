@@ -4,8 +4,7 @@ from Karaktärer import *
 
 
 def kista(Spelar_stats):
-    inehåll = random.randint(1, 6)
-    print(inehåll)
+    inehåll = random.randint(1, 5)
     if inehåll == 1:
         print(Svärd)
     elif inehåll == 2:
@@ -21,11 +20,11 @@ def kista(Spelar_stats):
 kista()
 
 
-def rum_typ(m_hp,m_str,p_hp,p_str):
+def rum_typ():
     typ = random.randint(1, 10)
     if typ == 1 or typ == 2 or typ == 3 or typ == 4:
-        
-        return(fight(m_hp,m_str,p_hp,p_str))
+        fight()
+        val_vanlig()
     elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
         val_vanlig()
     elif typ == 9:
