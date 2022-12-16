@@ -23,8 +23,13 @@ kista()
 def rum_typ(m_hp,m_str,p_hp,p_str):
     typ = random.randint(1, 10)
     if typ == 1 or typ == 2 or typ == 3 or typ == 4:
+<<<<<<< HEAD:kista.py
         
         return(fight(m_hp,m_str,p_hp,p_str))
+=======
+        fight()
+        val_vanlig()
+>>>>>>> 8a8a40a180d1187e70e60f03667cab30826b854e:rumtyp+.py
     elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
         val_vanlig()
     elif typ == 9:
@@ -36,5 +41,5 @@ def rum_typ(m_hp,m_str,p_hp,p_str):
 
 def fälla(p_hp):
     p_hp -= 1
-    typingPrint("du klev i en fälla, du har nu {p_hp} hp kvar")
+    typingPrint(f"du klev i en fälla, du har nu {p_hp} hp kvar")
     return p_hp
