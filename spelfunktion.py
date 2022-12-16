@@ -44,5 +44,5 @@ def main():
 
     karaktärsval()
 
-    val_vanlig(p_hp, p_str) 
+    val_vanlig() 
 main()
