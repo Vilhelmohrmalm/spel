@@ -1,6 +1,6 @@
 from spelfunktion import *
 from vapen import *
-from Karaktärer import *
+from karaktär import *
 import random
 
 def kista(Spelar_stats):

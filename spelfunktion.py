@@ -1,5 +1,5 @@
 from valfunktioner import *
-from Karaktärer import *
+from karaktär import *
 from text_animering import *
 from vapen import *
 from fight import *

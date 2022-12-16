@@ -1,6 +1,6 @@
 from text_animering import *
 from fight import *
-from Karaktärer import *
+from karaktär import *
 
 
 def val_vanlig(m_hp,m_str,p_hp, p_str):
