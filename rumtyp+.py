@@ -24,6 +24,7 @@ def rum_typ():
     typ = random.randint(1, 10)
     if typ == 1 or typ == 2 or typ == 3 or typ == 4:
         fight()
+        val_vanlig()
     elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
         val_vanlig()
     elif typ == 9:
@@ -35,5 +36,5 @@ def rum_typ():
 
 def fälla(p_hp):
     p_hp -= 1
-    typingPrint("du klev i en fälla, du har nu {p_hp} hp kvar")
+    typingPrint(f"du klev i en fälla, du har nu {p_hp} hp kvar")
     return p_hp
