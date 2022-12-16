@@ -23,8 +23,6 @@ class Karaktär():
         self.p_str = p_str
         self.p_namn = p_namn
         
-    def pstats(p_hp, p_str):
-        return f"Din hp är {p_hp} och din str är {p_str}"
 
 
 class Monster():
