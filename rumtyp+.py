@@ -1,7 +1,7 @@
 from spelfunktion import *
 from vapen import *
 from Karaktärer import *
-
+import random
 
 def kista(Spelar_stats):
     inehåll = random.randint(1, 5)

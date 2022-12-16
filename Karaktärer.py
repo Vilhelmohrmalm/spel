@@ -1,7 +1,7 @@
 from text_animering import *
 import random 
 from valfunktioner import *
-
+from fight import*
 
 def health(a, b):
     health = []
@@ -22,7 +22,7 @@ class Karaktär():
         self.p_hp = p_hp
         self.p_str = p_str
         self.p_namn = p_namn
-        
+
 
 
 class Monster():
