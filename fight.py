@@ -4,7 +4,7 @@ import random
 
 
 
-def fight( p_hp, p_str):
+def fight( m_hp, m_str, p_hp, p_str):
 
     if p_str >= m_hp:
         print("du besegrade monstret")
