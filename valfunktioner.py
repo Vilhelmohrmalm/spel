@@ -3,7 +3,7 @@ from fight import *
 from Karaktärer import *
 
 
-def val_vanlig(p_hp, p_str):
+def val_vanlig(m_hp,m_str,p_hp, p_str):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
