@@ -15,9 +15,7 @@ def val_vanlig(spelar_stats):
         rum_typ()
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
-    elif val == "Ö" or val == "öppna" or val == "ö":
-        typingPrint(
-            "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
+        rum_typ()
     elif val == "R" or val == "ryggsäck" or val == "r":
         typingPrint("hej")
     else:
