@@ -22,7 +22,7 @@ class Karaktärer():
         self.p_hp = p_hp
         self.p_str = p_str
         self.p_namn = p_namn
-
+        self.vapen_lista = []
 
 
 class Monster():
