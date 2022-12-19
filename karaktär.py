@@ -35,6 +35,15 @@ class Monster():
     def __str__(self):
         return f"Du stöter på en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka"
 
+def monstrgenerator():
+    monster=random.randint(1,2)
+    if monster == 1:
+        monster_stats=(Slime)
+        return(monster_stats)
+    elif monster == 2:
+        monster_stats=(Goblin)
+        return(monster_stats)
+
 
 Slime = Monster(health(4, 11), damage(1, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")

@@ -1,6 +1,7 @@
 from text_animering import *
 from fight import *
 from karaktär import *
+from rum_typ_och_kista *
 
 
 def val_vanlig(spelar_stats):
@@ -10,7 +11,8 @@ def val_vanlig(spelar_stats):
         typingPrint(f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
         val_vanlig(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
-        typingPrint("du gick igen om dörren till vänster och kommer till...")
+        typingPrint("du gick igen om dörren till vänster")
+        rum_typ()
     elif val == "H" or val == "höger" or val == "h":
         typingPrint("du gick igen om dörren till höger och kommer till...")
     elif val == "Ö" or val == "öppna" or val == "ö":
