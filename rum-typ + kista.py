@@ -143,18 +143,18 @@ def kista(Spelar_stats, v_hp, v_str, v_namn):
 kista()
 
 
-def rum_typ(p_hp, p_str):
+def rum_typ(spelar_stats):
     typ = random.randint(1, 10)
     if typ == 1 or typ == 2 or typ == 3 or typ == 4:
-        fight(p_hp, p_str)
-        val_vanlig(p_hp, p_str)
+        fight(spelar_stats)
+        val_vanlig(spelar_stats)
     elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
-        val_vanlig(p_hp, p_str)
+        val_vanlig(spelar_stats)
     elif typ == 9:
         val_kista()
     elif typ == 10:
-        fälla()
-        val_vanlig()
+        fälla(spelar_stats)
+        val_vanlig(spelar_stats)
 
 
 def fälla(p_hp):

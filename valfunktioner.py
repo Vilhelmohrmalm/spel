@@ -7,8 +7,8 @@ def val_vanlig(spelar_stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint(f"{spelar_stats}")
-        val_vanlig(p_hp, p_str)
+        typingPrint(f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
+        val_vanlig(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")
     elif val == "H" or val == "höger" or val == "h":

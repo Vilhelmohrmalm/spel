@@ -4,16 +4,16 @@ import random
 
 
 
-def fight( m_hp, m_str, p_hp, p_str):
+def fight(spelar_stats, monster_stats):
 
-    if p_str >= m_hp:
+    if spelar_stats.p_str >= m_hp:
         print("du besegrade monstret")
         print(f"Du har {p_hp} kvar")
 
-    elif p_str < m_hp and m_str >= p_hp:
+    elif spelar_stats.p_str < m_hp and m_str >= spelar_stats.p_hp:
         print("du dog")
-    elif p_str < m_hp and m_str < p_hp:
-        m_hp = m_hp - p_str
-        p_hp = p_hp - m_str
-        fight(m_str, m_str, p_hp, p_str)
+    elif spelar_stats.p_str < m_hp and m_str < spelar_stats.p_hp:
+        monster_stats.m_hp = m_hp - spelar_stats.p_str
+        spelar_stats.p_hp= spelar_stats.p_hp - m_str
+        fight(spelar_stats, monster_stats)
 
