@@ -46,6 +46,7 @@ def main():
     spelar_stats=karaktärsval()
 
     val_vanlig(spelar_stats)
+    print("hej")
 
 
 main()

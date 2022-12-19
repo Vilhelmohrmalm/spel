@@ -2,7 +2,7 @@ from text_animering import *
 import random
 from valfunktioner import *
 from fight import *
-from vapen import *
+
 
 def health(a, b):
     health = []
@@ -18,11 +18,7 @@ def damage(a, b):
     return (random.choice(damage))
 
 
-class Vapen():
-    def __init__(self, v_hp, v_str, v_namn):
-        self.v_namn = v_namn
-        self.v_hp = v_hp
-        self.v_str = v_str
+
 
 class Karaktärer():
     def __init__(self, p_hp, p_str, p_namn):
