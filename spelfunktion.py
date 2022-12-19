@@ -18,20 +18,21 @@ def karaktärsval():
     if namn == 1:
         Spelar_stats = (Assasin)
         typingPrint(" Du är nu en Assasin med 5 hp och 10 str ")
+        return (Spelar_stats)
 
     elif namn == 2:
         Spelar_stats = (Barb)
         typingPrint(" Du är nu en Barbarian med 8 hp och 7 str ")
+        return (Spelar_stats)
 
     elif namn == 3:
         Spelar_stats = (Knight)
         typingPrint(" Du är nu en Knight med 10 hp och 5 str ")
+        return (Spelar_stats)
 
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
         karaktärsval()
-
-    return (Spelar_stats)
 
 
 def main():
