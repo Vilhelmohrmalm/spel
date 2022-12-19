@@ -33,7 +33,7 @@ def karaktärsval():
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
         karaktärsval()
-
+    
 
 def main():
     typingPrint("""
@@ -43,9 +43,9 @@ def main():
     Han har en slimekapasitet på 100%.
     """)
 
-    karaktärsval()
+    x=karaktärsval()
 
-    val_vanlig(Spelar_stats)
+    val_vanlig(x)
 
 
 main()
