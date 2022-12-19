@@ -1,7 +1,7 @@
 from text_animering import *
 from fight import *
 from karaktär import *
-from rum_typ_och_kista *
+from rum_typ_och_kista import *
 
 
 def val_vanlig(spelar_stats):
