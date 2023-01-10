@@ -1,5 +1,5 @@
-from valfunktioner import *
-from karaktär import *
+from valfunktioner import val_vanlig
+from karaktär import Karaktärsval
 from text_animering import *
 from vapen import *
 from fight import *
