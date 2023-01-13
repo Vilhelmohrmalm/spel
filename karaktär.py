@@ -1,5 +1,5 @@
-from text_animering import *
 import random
+from text_animering import *
 from valfunktioner import *
 from fight import *
 

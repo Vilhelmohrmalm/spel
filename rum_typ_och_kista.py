@@ -1,8 +1,8 @@
+import random
 from spelfunktion import *
 from vapen import *
 from karaktär import *
 from fight import *
-import random
 
 
 def kista(Spelar_stats, v_hp, v_str, v_namn):

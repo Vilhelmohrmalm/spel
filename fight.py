@@ -1,5 +1,5 @@
-from karaktär import *
 import random
+from karaktär import *
 
 
 
