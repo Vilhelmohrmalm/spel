@@ -4,6 +4,8 @@ from karaktär import *
 from rum_typ_och_kista import *
 
 
+# ---------------------------------------- VALFUNKTIONER ----------------------------------------
+
 def val_vanlig(spelar_stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")

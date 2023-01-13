@@ -1,7 +1,4 @@
 import random
-from text_animering import *
-from valfunktioner import *
-from fight import *
 
 
 def health(a, b):

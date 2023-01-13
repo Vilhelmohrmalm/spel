@@ -5,6 +5,8 @@ from karaktär import *
 from fight import *
 
 
+# ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
+
 def kista(Spelar_stats, v_hp, v_str, v_namn):
     inehåll = random.randint(1, 5)
     if inehåll == 1:
