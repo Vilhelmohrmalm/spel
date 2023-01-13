@@ -10,7 +10,8 @@ def val_vanlig(spelar_stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint(f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
+        typingPrint(
+            f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
         val_vanlig(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster")
@@ -20,9 +21,10 @@ def val_vanlig(spelar_stats):
         rum_typ()
     elif val == "R" or val == "ryggsäck" or val == "r":
         typingPrint("hej")
+        val_vanlig(spelar_stats)
     else:
         typingPrint("din sopa välj ett av alternativen")
-        val_vanlig()
+        val_vanlig(spelar_stats)
 
 
 def val_kista():
