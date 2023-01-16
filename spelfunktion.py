@@ -6,7 +6,7 @@ from text_animering import *
 
 
 def fight(spelar_stats, monster_stats):
-
+    typingPrint(f"Du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
     if spelar_stats.p_str >= monster_stats.m_hp:
         typingPrint("du besegrade monstret")
         typingPrint(f"Du har {spelar_stats.p_hp} hp kvar")
@@ -17,7 +17,7 @@ def fight(spelar_stats, monster_stats):
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
-        fight(spelar_stats, monster_stats)
+        return(fight(spelar_stats, monster_stats))
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
@@ -181,23 +181,23 @@ def kista(Spelar_stats, v_hp, v_str, v_namn):
 
 def rum_typ(spelar_stats):
     typ = random.randint(1, 10)
-    if typ == 1 or typ == 2 or typ == 3 or typ == 4:
+    if typ in [1,2,3,4]:
         monster_stats = monstrgenerator()
         spelar_stats.p_hp = fight(spelar_stats, monster_stats)
         val_vanlig(spelar_stats)
-    elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
+    elif typ in [5,6,7]:
         val_vanlig(spelar_stats)
-    elif typ == 9:
-        val_kista()
+    elif typ in [8,9]:
+        val_kista(spelar_stats)
     elif typ == 10:
-        fälla(spelar_stats)
+        spelar_stats.p_hp = fälla(spelar_stats)
         val_vanlig(spelar_stats)
 
 
-def fälla(p_hp):
-    p_hp -= 1
-    typingPrint(f"du klev i en fälla, du har nu {p_hp} hp kvar")
-    return p_hp
+def fälla(spelar_stats):
+    spelar_stats.p_hp -= 1
+    typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar")
+    return spelar_stats.p_hp
 
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -206,20 +206,21 @@ def fälla(p_hp):
 
 def val_vanlig(spelar_stats):
     val = typingInput(
-        "vad vill du göra?\n S = stats\n V = vänster\n F=fram\n H = höger\n R = ryggsäck\n")
-    if val == "S" or val == "stats" or val == "s":
+        "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
+    if val  in ["S","stats","s"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
         val_vanlig(spelar_stats)
-    elif val == "V" or val == "vänster" or val == "v":
+    elif val in ["V", "vänster", "v"]:
         typingPrint("du gick igen om dörren till vänster ")
         rum_typ(spelar_stats)
-    elif val == "H" or val == "höger" or val == "h":
+    elif val in ["H", "höger","h"]:
         typingPrint("du gick igen om dörren till höger och kommer till ")
         rum_typ(spelar_stats)
-    elif val == "R" or val == "ryggsäck" or val == "r":
+    elif val in ["R", "ryggsäck", "r"]:
         typingPrint("hej")
-    elif val == "F" or val == "fram" or val == "f":
+    elif val in ["F", "fram", "f"]:
+        typingPrint("Du går fram och kommer till ")
         rum_typ(spelar_stats)
     else:
         typingPrint("din sopa välj ett av alternativen")
@@ -229,16 +230,16 @@ def val_vanlig(spelar_stats):
 def val_kista(spelar_stats):
     val = typingInput(
         "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n V = vänster\n H = höger\n ")
-    if val == "S" or val == "stats" or val == "s":
+    if val in ["S","stats","s"]:
         typingPrint("din stats är dina stats")
         val_kista(spelar_stats)
-    elif val == "V" or val == "vänster" or val == "v":
+    elif val in ["V", "vänster", "v"]:
         typingPrint("du gick igen om dörren till vänster och kommer till ")
         rum_typ(spelar_stats)
-    elif val == "H" or val == "höger" or val == "h":
+    elif val in ["H", "höger","h"]:
         typingPrint("du gick igen om dörren till höger och kommer till ")
         rum_typ(spelar_stats)
-    elif val == "Ö" or val == "öppna" or val == "ö":
+    elif val in ["Ö", "öppna", "ö"]:
         typingPrint(
             "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
         val_vanlig(spelar_stats)
