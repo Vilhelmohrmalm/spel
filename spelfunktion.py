@@ -186,6 +186,7 @@ def rum_typ(spelar_stats):
         spelar_stats.p_hp = fight(spelar_stats, monster_stats)
         val_vanlig(spelar_stats)
     elif typ in [5,6,7]:
+        typingPrint("ett tomt rum\n")
         val_vanlig(spelar_stats)
     elif typ in [8,9]:
         val_kista(spelar_stats)
