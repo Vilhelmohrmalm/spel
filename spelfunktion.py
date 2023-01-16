@@ -9,7 +9,7 @@ def fight(spelar_stats, monster_stats):
 
     if spelar_stats.p_str >= monster_stats.m_hp:
         print("du besegrade monstret")
-        print(f"Du har {spelar_stats.p_hp} kvar")
+        print(f"Du har {spelar_stats.p_hp} hp kvar")
         return(spelar_stats.p_hp)
 
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
@@ -206,7 +206,7 @@ def fälla(p_hp):
 
 def val_vanlig(spelar_stats):
     val = typingInput(
-        "vad vill du göra?\n S = stats\n V = vänster\n  F=fram\n H = höger\n R = ryggsäck\n")
+        "vad vill du göra?\n S = stats\n V = vänster\n F=fram\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
