@@ -17,7 +17,7 @@ def fight(spelar_stats, monster_stats):
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
-        fight(spelar_stats, monster_stats)
+        return(fight(spelar_stats, monster_stats))
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
@@ -191,14 +191,14 @@ def rum_typ(spelar_stats):
     elif typ == 9 or typ == 8:
         val_kista(spelar_stats)
     elif typ == 10:
-        fälla(spelar_stats)
+        spelar_stats.p_hp = fälla(spelar_stats)
         val_vanlig(spelar_stats)
 
 
-def fälla(p_hp):
-    p_hp -= 1
-    typingPrint(f"du klev i en fälla, du har nu {p_hp} hp kvar")
-    return p_hp
+def fälla(spelar_stats):
+    spelar_stats.p_hp -= 1
+    typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar")
+    return spelar_stats.p_hp
 
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
