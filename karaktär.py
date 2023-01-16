@@ -7,7 +7,6 @@ def health(a, b):
         health.append(i)
     return (random.choice(health))
 
-
 def damage(a, b):
     damage = []
     for i in range(a, b+1):
@@ -36,6 +35,8 @@ class Monster():
 
 def monstrgenerator():
     monster=random.randint(1,2)
+    Slime = Monster(health(4, 11), damage(1, 6), "Slime")
+    Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
     if monster == 1:
         monster_stats=(Slime)
         return(monster_stats)
