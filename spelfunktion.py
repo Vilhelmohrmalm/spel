@@ -185,10 +185,11 @@ def rum_typ(spelar_stats):
         monster_stats = monstrgenerator()
         spelar_stats.p_hp = fight(spelar_stats, monster_stats)
         val_vanlig(spelar_stats)
-    elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
+    elif typ == 5 or typ == 6 or typ == 7:
+        print(" ett tomt rum")
         val_vanlig(spelar_stats)
-    elif typ == 9:
-        val_kista()
+    elif typ == 9 or typ == 8:
+        val_kista(spelar_stats)
     elif typ == 10:
         fälla(spelar_stats)
         val_vanlig(spelar_stats)
