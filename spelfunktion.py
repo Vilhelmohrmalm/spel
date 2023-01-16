@@ -222,12 +222,12 @@ def val_vanlig(spelar_stats):
         val_vanlig(spelar_stats)
 
 
-def val_kista():
+def val_kista(spelar_stats):
     val = typingInput(
         "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n V = vänster\n H = höger\n ")
     if val == "S" or val == "stats" or val == "s":
         typingPrint("din stats är dina stats")
-        val_kista()
+        val_kista(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster och kommer till...")
     elif val == "H" or val == "höger" or val == "h":
@@ -235,10 +235,10 @@ def val_kista():
     elif val == "Ö" or val == "öppna" or val == "ö":
         typingPrint(
             "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
-        val_vanlig()
+        val_vanlig(spelar_stats)
     else:
         typingPrint("din sopa välj ett av alternativen")
-        val_kista()
+        val_kista(spelar_stats)
 
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
