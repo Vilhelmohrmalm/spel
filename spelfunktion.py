@@ -4,6 +4,7 @@ from text_animering import *
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
+
 def fight(spelar_stats, monster_stats):
 
     if spelar_stats.p_str >= monster_stats.m_hp:
@@ -14,12 +15,13 @@ def fight(spelar_stats, monster_stats):
         print("du dog")
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
-        spelar_stats.p_hp= spelar_stats.p_hp - monster_stats.m_str
+        spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
         fight(spelar_stats, monster_stats)
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
 # ---------------------------------------- VAPEN ----------------------------------------
+
 
 class Vapen():
     def __init__(self, v_hp, v_str, v_namn):
@@ -27,13 +29,12 @@ class Vapen():
         self.v_hp = v_hp
         self.v_str = v_str
 
+
 Svärd = Vapen(health(0, 1), damage(1, 2), "Svärd")
 Sköld = Vapen(health(2, 3), damage(0, 0), "Sköld")
 Yxa = Vapen(health(0, 0), damage(1, 4), "Yxa")
 Pilbåge = Vapen(health(0, 0), damage(2, 3), "Pilbåge")
 Spjut = Vapen(health(0, 0), damage(1, 4), "Spjut")
-
-
 
 
 # ---------------------------------------- VAPEN ----------------------------------------
@@ -177,12 +178,11 @@ def kista(Spelar_stats, v_hp, v_str, v_namn):
                     typingPrint("svara med ett av de givna alternativen")
 
 
-
 def rum_typ(spelar_stats):
     typ = random.randint(1, 10)
     if typ == 1 or typ == 2 or typ == 3 or typ == 4:
-        monster_stats=monstrgenerator()
-        spelar_stats.p_hp = fight(spelar_stats,monster_stats)
+        monster_stats = monstrgenerator()
+        spelar_stats.p_hp = fight(spelar_stats, monster_stats)
         val_vanlig(spelar_stats)
     elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
         val_vanlig(spelar_stats)
@@ -207,13 +207,14 @@ def val_vanlig(spelar_stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
-        typingPrint(f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
+        typingPrint(
+            f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
         val_vanlig(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
         typingPrint("du gick igen om dörren till vänster ")
         rum_typ(spelar_stats)
     elif val == "H" or val == "höger" or val == "h":
-        typingPrint("du gick igen om dörren till höger och kommer till...")
+        typingPrint("du gick igen om dörren till höger och kommer till ")
         rum_typ(spelar_stats)
     elif val == "R" or val == "ryggsäck" or val == "r":
         typingPrint("hej")
@@ -229,9 +230,11 @@ def val_kista(spelar_stats):
         typingPrint("din stats är dina stats")
         val_kista(spelar_stats)
     elif val == "V" or val == "vänster" or val == "v":
-        typingPrint("du gick igen om dörren till vänster och kommer till...")
+        typingPrint("du gick igen om dörren till vänster och kommer till ")
+        rum_typ(spelar_stats)
     elif val == "H" or val == "höger" or val == "h":
-        typingPrint("du gick igen om dörren till höger och kommer till...")
+        typingPrint("du gick igen om dörren till höger och kommer till ")
+        rum_typ(spelar_stats)
     elif val == "Ö" or val == "öppna" or val == "ö":
         typingPrint(
             "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
@@ -243,6 +246,8 @@ def val_kista(spelar_stats):
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
 # ---------------------------------------- SPELFUNKTIONER ----------------------------------------
+
+
 def karaktärsval():
     namn = int(typingInput("""
     Välj din karaktär.
@@ -271,7 +276,7 @@ def karaktärsval():
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
         return karaktärsval()
-    
+
 
 def main():
     typingPrint("""
@@ -281,9 +286,8 @@ def main():
     Han har en slimekapasitet på 100%.
     """)
 
-    spelar_stats=karaktärsval()
+    spelar_stats = karaktärsval()
     val_vanlig(spelar_stats)
-   
 
 
 main()
