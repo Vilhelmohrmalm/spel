@@ -8,12 +8,12 @@ from text_animering import *
 def fight(spelar_stats, monster_stats):
 
     if spelar_stats.p_str >= monster_stats.m_hp:
-        print("du besegrade monstret")
-        print(f"Du har {spelar_stats.p_hp} hp kvar")
-        return(spelar_stats.p_hp)
+        typingPrint("du besegrade monstret")
+        typingPrint(f"Du har {spelar_stats.p_hp} hp kvar")
+        return (spelar_stats.p_hp)
 
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
-        print("du dog")
+        typingPrint("du dog")
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
@@ -185,11 +185,10 @@ def rum_typ(spelar_stats):
         monster_stats = monstrgenerator()
         spelar_stats.p_hp = fight(spelar_stats, monster_stats)
         val_vanlig(spelar_stats)
-    elif typ == 5 or typ == 6 or typ == 7:
-        print(" ett tomt rum")
+    elif typ == 5 or typ == 6 or typ == 7 or typ == 8:
         val_vanlig(spelar_stats)
-    elif typ == 9 or typ == 8:
-        val_kista(spelar_stats)
+    elif typ == 9:
+        val_kista()
     elif typ == 10:
         fälla(spelar_stats)
         val_vanlig(spelar_stats)
@@ -207,7 +206,7 @@ def fälla(p_hp):
 
 def val_vanlig(spelar_stats):
     val = typingInput(
-        "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
+        "vad vill du göra?\n S = stats\n V = vänster\n F=fram\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
@@ -279,7 +278,7 @@ def karaktärsval():
 
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
-        karaktärsval()
+        return karaktärsval()
 
 
 def main():
