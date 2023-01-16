@@ -207,7 +207,7 @@ def fälla(p_hp):
 
 def val_vanlig(spelar_stats):
     val = typingInput(
-        "vad vill du göra?\n S = stats\n V = vänster\n F=fram\n H = höger\n R = ryggsäck\n")
+        "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
     if val == "S" or val == "stats" or val == "s":
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
@@ -279,7 +279,7 @@ def karaktärsval():
 
     else:
         typingPrint("svara 1, 2 eller 3 din sopa")
-        return karaktärsval()
+        karaktärsval()
 
 
 def main():
