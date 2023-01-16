@@ -6,7 +6,7 @@ from text_animering import *
 
 
 def fight(spelar_stats, monster_stats):
-
+    typingPrint(f"Du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
     if spelar_stats.p_str >= monster_stats.m_hp:
         typingPrint("du besegrade monstret")
         typingPrint(f"Du har {spelar_stats.p_hp} hp kvar")
