@@ -16,11 +16,13 @@ def slut():
 
 def fight(spelar_stats, monster_stats):
     typingPrint(
-        f"Du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
+        f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
     if spelar_stats.p_str >= monster_stats.m_hp:
-        typingPrint("du besegrade monstret")
-        typingPrint(f"Du har {spelar_stats.p_hp} hp kvar")
-        return (spelar_stats.p_hp)
+        typingPrint("du besegrade monstret\n")
+        typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
+        spelar_stats.p_lvl += 1
+        typingPrint(f"Du är har nu lvl {spelar_stats.p_lvl}")
+        return (spelar_stats)
 
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
         typingPrint("du dog")
@@ -82,7 +84,7 @@ def kista(spelar_stats, v_hp, v_str, v_namn):
                 typingPrint("svara med ett av de givna alternativen")
 
 
-def rum_typ(spelar_stats):
+def rum_typ(spelar_stats, v_hp, v_str, v_namn):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator()
@@ -112,9 +114,9 @@ def fälla(spelar_stats):
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
 
-def val_vanlig(spelar_stats, v_hp, v_str, v_namn):
+def val_vanlig(spelar_stats):
     val = typingInput(
-        "\nvad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
+        "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
     if val in ["S", "stats", "s"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
@@ -126,11 +128,7 @@ def val_vanlig(spelar_stats, v_hp, v_str, v_namn):
         typingPrint("du gick igen om dörren till höger och kommer till ")
         rum_typ(spelar_stats)
     elif val in ["R", "ryggsäck", "r"]:
-        typingPrint(f"du har {len(spelar_stats.vapen_lista)} vapen")
-        for i in range(len(spelar_stats.vapen_lista)):
-            typingPrint(
-                f"{i} {spelar_stats[i].v_hp} {spelar_stats[i].v_str} {spelar_stats[i].v_namn}\n")
-        return (spelar_stats, v_hp, v_str, v_namn)
+        typingPrint("hej")
     elif val in ["F", "fram", "f"]:
         typingPrint("Du går fram och kommer till ")
         rum_typ(spelar_stats)
@@ -141,7 +139,7 @@ def val_vanlig(spelar_stats, v_hp, v_str, v_namn):
 
 def val_kista(spelar_stats, v_hp, v_str, v_namn):
     val = typingInput(
-        "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n V = vänster\n H = höger\n ")
+        "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n ")
     if val in ["S", "stats", "s"]:
         typingPrint("din stats är dina stats")
         return val_kista(spelar_stats, v_hp, v_str, v_namn)
@@ -198,7 +196,11 @@ def main():
     """)
 
     spelar_stats = karaktärsval()
-    val_vanlig(spelar_stats)
+
+    val_vanlig(spelar_stats, v_hp, v_str, v_namn)
+
+    typingPrint("Grattis du vann")
+    slut()
 
 
 main()

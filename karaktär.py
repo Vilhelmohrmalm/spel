@@ -17,9 +17,10 @@ def damage(a, b):
 
 
 class Karaktärer():
-    def __init__(self, p_hp, p_str, p_namn):
+    def __init__(self, p_hp, p_str, p_lvl, p_namn):
         self.p_hp = p_hp
         self.p_str = p_str
+        self.p_lvl = p_lvl
         self.p_namn = p_namn
         self.vapen_lista = []
 
@@ -48,6 +49,6 @@ def monstrgenerator():
 Slime = Monster(health(4, 11), damage(1, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 
-Assasin = Karaktärer(5, 10, "assasin")
-Barb = Karaktärer(8, 7, "Barb")
-Knight = Karaktärer(10, 5, "Knight")
+Assasin = Karaktärer(5, 10, 0, "assasin")
+Barb = Karaktärer(8, 7, 0, "Barb")
+Knight = Karaktärer(10, 5, 0, "Knight")
