@@ -104,8 +104,13 @@ def rum_typ(spelar_stats,v_hp, v_str, v_namn):
 def fälla(spelar_stats):
     if spelar_stats.p_hp > 1:
         spelar_stats.p_hp -= 1
+<<<<<<< HEAD
+        typingPrint(
+            f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
+        return spelar_stats.p_hp
+=======
         typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
-        return (spelar_stats)
+        return spelar_stats
     else:
         typingPrint("Du dog i en fälla")
         slut()
