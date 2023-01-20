@@ -15,6 +15,7 @@ def fight(spelar_stats, monster_stats):
 
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
         typingPrint("du dog")
+        quit()
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
@@ -88,9 +89,13 @@ def rum_typ(spelar_stats):
 
 
 def fälla(spelar_stats):
-    spelar_stats.p_hp -= 1
-    typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar")
-    return spelar_stats.p_hp
+    if spelar_stats.p_hp > 1:
+        spelar_stats.p_hp -= 1
+        typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
+        return spelar_stats.p_hp
+    else:
+        typingPrint("Du dog i en fälla")
+        quit()
 
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -116,7 +121,7 @@ def val_vanlig(spelar_stats):
         typingPrint("Du går fram och kommer till ")
         rum_typ(spelar_stats)
     else:
-        typingPrint("din sopa välj ett av alternativen")
+        typingPrint("din sopa välj ett av alternativen\n")
         val_vanlig(spelar_stats)
 
 
