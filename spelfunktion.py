@@ -2,6 +2,15 @@ import random
 from karaktär import *
 from text_animering import *
 
+
+# ---------------------------------------- SLUT  ----------------------------------------
+
+def slut():
+    typingPrint("Game Over")
+    quit()
+
+# ---------------------------------------- SLUT  ----------------------------------------
+
 # ---------------------------------------- FIGHT ----------------------------------------
 
 
@@ -15,7 +24,7 @@ def fight(spelar_stats, monster_stats):
 
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
         typingPrint("du dog")
-        quit()
+        slut()
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
@@ -78,24 +87,24 @@ def rum_typ(spelar_stats):
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator()
         spelar_stats.p_hp = fight(spelar_stats, monster_stats)
-        val_vanlig(spelar_stats)
+        return spelar_stats
     elif typ in [5, 6, 7]:
-        val_vanlig(spelar_stats)
+        return(spelar_stats)
     elif typ in [8, 9]:
-        val_kista(spelar_stats)
+        return(spelar_stats)
     elif typ == 10:
         spelar_stats.p_hp = fälla(spelar_stats)
-        val_vanlig(spelar_stats)
+        return(spelar_stats)
 
 
 def fälla(spelar_stats):
     if spelar_stats.p_hp > 1:
         spelar_stats.p_hp -= 1
         typingPrint(f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
-        return spelar_stats.p_hp
+        return spelar_stats
     else:
         typingPrint("Du dog i en fälla")
-        quit()
+        slut()
 
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -125,25 +134,19 @@ def val_vanlig(spelar_stats):
         val_vanlig(spelar_stats)
 
 
-def val_kista(spelar_stats):
+def val_kista(spelar_stats,v_hp,v_str,v_namn):
     val = typingInput(
         "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n V = vänster\n H = höger\n ")
     if val in ["S", "stats", "s"]:
         typingPrint("din stats är dina stats")
-        val_kista(spelar_stats)
-    elif val in ["V", "vänster", "v"]:
-        typingPrint("du gick igen om dörren till vänster och kommer till ")
-        rum_typ(spelar_stats)
-    elif val in ["H", "höger", "h"]:
-        typingPrint("du gick igen om dörren till höger och kommer till ")
-        rum_typ(spelar_stats)
+        return val_kista(spelar_stats,v_hp,v_str,v_namn)
     elif val in ["Ö", "öppna", "ö"]:
-        typingPrint(
-            "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
-        val_vanlig(spelar_stats)
+        typingPrint("du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
+        kista(spelar_stats, v_hp, v_str, v_namn)
+        return spelar_stats
     else:
         typingPrint("din sopa välj ett av alternativen")
-        val_kista(spelar_stats)
+        return val_kista(spelar_stats,v_hp,v_str,v_namn)
 
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
