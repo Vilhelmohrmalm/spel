@@ -48,7 +48,7 @@ def kista(Spelar_stats, v_hp, v_str, v_namn):
     typingPrint(
         f"du har hittat {v_namn}.\n det har en hp på {v_hp} och en styrka på {v_str}")
     if len(Spelar_stats.vapen_lista) > 2:
-        Spelar_stats.vapen_lista.append(Svärd)
+        Spelar_stats.vapen_lista.append(vapen)
     else:
         typingPrint(
             "Du har redan 2 vapen och måste ta bort ett vapen för att lägga till det nya")
@@ -60,14 +60,14 @@ def kista(Spelar_stats, v_hp, v_str, v_namn):
                 "Om du vill byta det nya vapnet mot ett gammalt vapen skriv in det gamla vapnets indikationsnummer annars skriv L ")
             if svar == "1":
                 Spelar_stats.vapen_lista[1].pop()
-                Spelar_stats.vapen_lista.append(Svärd)
-                return
+                Spelar_stats.vapen_lista.append(vapen)
+                return Spelar_stats
             elif svar == "2":
                 Spelar_stats.vapen_lista[2].pop()
-                Spelar_stats.vapen_lista.append(Svärd)
-                return
+                Spelar_stats.vapen_lista.append(vapen)
+                return Spelar_stats
             elif svar == "L" or "l":
-                return
+                return Spelar_stats
             else:
                 typingPrint("svara med ett av de givna alternativen")
 
