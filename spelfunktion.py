@@ -50,7 +50,8 @@ def fight(spelar_stats, monster_stats):
             return (spelar_stats)
 
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-            typingPrint(f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
+            typingPrint(
+                f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
             slut()
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
             monster_stats.m_hp = monster_stats.m_hp - \
@@ -82,17 +83,15 @@ def kista_fas1(spelar_stats):
         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str\n ")
     while True:
         svar = typingInput(
-            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L \n")
+            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv något annat \n")
         if svar == "1":
             typingPrint("Du har nu ett nytt vapen i din ryggsäck\n")
             spelar_stats.vapen = vapen
             return spelar_stats
-        elif svar == "L" or "l":
+        else:
             typingPrint(
                 "Du lämnade det nya fräsha vapnet i kistan för du kan inte överge ditt gamla vapen efter allt ni gjort tilsammans\n")
             return spelar_stats
-        else:
-            typingPrint("svara med ett av de givna alternativen")
 
 
 def kista_fas2(spelar_stats):
@@ -114,17 +113,15 @@ def kista_fas2(spelar_stats):
         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str\n ")
     while True:
         svar = typingInput(
-            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L \n")
+            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv något annat \n")
         if svar == "1":
             typingPrint("Du har nu ett nytt vapen i din ryggsäck\n")
             spelar_stats.vapen = vapen
             return spelar_stats
-        elif svar == "L" or "l":
+        else:
             typingPrint(
                 "Du lämnade det nya fräsha vapnet i kistan för du kan inte överge ditt gamla vapen efter allt ni gjort tilsammans\n")
             return spelar_stats
-        else:
-            typingPrint("svara med ett av de givna alternativen")
 
 
 def kista_fas3(spelar_stats):
@@ -146,17 +143,15 @@ def kista_fas3(spelar_stats):
         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str\n ")
     while True:
         svar = typingInput(
-            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L \n")
+            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv något annat \n")
         if svar == "1":
             typingPrint("Du har nu ett nytt vapen i din ryggsäck\n")
             spelar_stats.vapen = vapen
             return spelar_stats
-        elif svar == "L" or "l":
+        else:
             typingPrint(
                 "Du lämnade det nya fräsha vapnet i kistan för du kan inte överge ditt gamla vapen efter allt ni gjort tilsammans\n")
             return spelar_stats
-        else:
-            typingPrint("svara med ett av de givna alternativen")
 
 
 def rum_typ_fas1(spelar_stats):
@@ -243,7 +238,8 @@ def fälla(spelar_stats):
             f"där du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
         return spelar_stats
     else:
-        typingPrint(f"där du dör i en fälla\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
+        typingPrint(
+            f"där du dör i en fälla\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
         slut()
 
 
@@ -261,7 +257,7 @@ def val_vanlig_fas1(spelar_stats):
             typingPrint(
                 f"Du har {spelar_stats.p_hp} hp, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
 
-        elif val in ["V", "vänster", "v", "gå vänster" ]:
+        elif val in ["V", "vänster", "v", "gå vänster"]:
             typingPrint("Du går igenom dörren till vänster ")
             rum_typ_fas1(spelar_stats)
         elif val in ["H", "höger", "h", "gå höger"]:
@@ -364,7 +360,7 @@ def val_kista_fas2(spelar_stats):
         typingPrint(
             f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
         return val_kista_fas2(spelar_stats)
-    elif val in ["Ö", "öppna", "ö" , "öppna kista"]:
+    elif val in ["Ö", "öppna", "ö", "öppna kista"]:
         typingPrint(
             "du öppnar kistan och i den hittar du ")
         kista_fas2(spelar_stats)
