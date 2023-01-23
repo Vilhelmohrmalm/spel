@@ -37,11 +37,6 @@ def fight(spelar_stats, monster_stats):
 # ---------------------------------------- VAPEN ----------------------------------------
 
 
-
-
-
-
-
 # ---------------------------------------- VAPEN ----------------------------------------
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -65,7 +60,7 @@ def kista(spelar_stats):
             "Du har redan ett vapen och måste ta bort det för att lägga till det nya")
         for i in range(len(spelar_stats.vapen_lista)):
             typingPrint(
-                f"indikations nummer = {i} {spelar_stats[i].v_hp} {spelar_stats[i].v_str} {spelar_stats[i].v_namn}")
+                f"Du har {spelar_stats.v_namn} med {spelar_stats.v_hp} hp och {spelar_stats.v_str} str ")
         while True:
             svar = typingInput(
                 "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L ")
@@ -123,7 +118,8 @@ def val_vanlig(spelar_stats):
         typingPrint("du gick igen om dörren till höger och kommer till ")
         rum_typ(spelar_stats)
     elif val in ["R", "ryggsäck", "r"]:
-        typingPrint("hej")
+        typingPrint(
+            f"Du har {spelar_stats.v_namn} med {spelar_stats.v_hp} hp {spelar_stats.v_str} str ")
     elif val in ["F", "fram", "f"]:
         typingPrint("Du går fram och kommer till ")
         rum_typ(spelar_stats)
@@ -191,7 +187,6 @@ def main():
     """)
 
     spelar_stats = karaktärsval()
-
 
     val_vanlig(spelar_stats)
 
