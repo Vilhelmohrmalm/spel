@@ -69,11 +69,13 @@ def boss_fight(spelar_stats):
         if val in ["S", "s", "sloss", "sloss mot Taurus"]:
             while m_hp > 0:
                 if spelar_stats.p_str + spelar_stats.vapen.v_str >= m_hp:
-                    typingPrint("Du besegrade tarus och kan änligen lämna labyrinten\n")
+                    typingPrint(
+                        "Du besegrade tarus och kan änligen lämna labyrinten\n")
                     return (spelar_stats)
 
                 elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-                    typingPrint(f"Taurus dödade dig\n Måste vara skill issue\n")
+                    typingPrint(
+                        f"Taurus dödade dig\n Måste vara skill issue\n")
                     slut()
                 elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
                     m_hp = m_hp - \
@@ -81,7 +83,8 @@ def boss_fight(spelar_stats):
                     spelar_stats.p_hp = spelar_stats.p_hp - \
                         m_str + spelar_stats.vapen.v_hp
         elif val in ["L", "l", "ge upp"]:
-            typingPrint("Du gav upp och dog på lvl 30\n Måst vara skill issue\n")
+            typingPrint(
+                "Du gav upp och dog på lvl 30\n Måst vara skill issue\n")
             slut()
         else:
             typingPrint("Din sopa välj ett av alternativen\n")
