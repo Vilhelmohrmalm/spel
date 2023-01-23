@@ -42,7 +42,7 @@ class Monster():
         return f"Du stöter på en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka"
 
 
-def monstrgenerator1():
+def monstrgenerator_fas1():
     monster = random.randint(1, 2)
     Slime = Monster(health(4, 11), damage(2, 6), "Slime")
     Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
@@ -54,7 +54,7 @@ def monstrgenerator1():
         return (monster_stats)
 
 
-def monstrgenerator2():
+def monstrgenerator_fas2():
     monster = random.randint(1, 2)
     Lycan = Monster(health(6, 12), damage(4, 9), "Lycan")
     Golem = Monster(health(12, 17), damage(1, 3), "Golem")
@@ -66,29 +66,26 @@ def monstrgenerator2():
         return (monster_stats)
 
 
-Start = Vapen(0, 0, "en pinne")
+def monstrgenerator_fas3():
+    monster = random.randint(1, 2)
+    Undead = Monster(health(15, 22), damage(2, 4), "Undead")
+    Orc = Monster(health(9, 15), damage(6, 10), "Orc")
+    if monster == 1:
+        monster_stats = (Undead)
+        return (monster_stats)
+    elif monster == 2:
+        monster_stats = (Orc)
+        return (monster_stats)
 
-Lycan = Monster(health(6, 12), damage(4, 9), "Lycan")
-Golem = Monster(health(12, 17), damage(1, 3), "Golem")
+
+
+Start = Vapen(0, 0, "en pinne")
 
 Assasin = Karaktärer(5, 10, 0, 0, "assasin", Start)
 Barb = Karaktärer(8, 7, 0, 0, "Barb", Start)
 Knight = Karaktärer(10, 5, 0, 0, "Knight", Start)
 
 
-# fas 2
-Svärd = Vapen(health(0, 2), damage(2, 4), "ett Svärd")
-Sköld = Vapen(health(2, 5), damage(0, 0), "en Sköld")
-Yxa = Vapen(health(0, 0), damage(1, 6), "en Yxa")
-Pilbåge = Vapen(health(0, 0), damage(2, 5), "en Pilbåge")
-Spjut = Vapen(health(0, 0), damage(3, 4), "ett Spjut")
 
-# fas 3
-Svärd = Vapen(health(1, 3), damage(4, 5), "ett Svärd")
-Sköld = Vapen(health(4, 7), damage(0, 0), "en Sköld")
-Yxa = Vapen(health(0, 0), damage(3, 8), "en Yxa")
-Pilbåge = Vapen(health(0, 0), damage(4, 7), "en Pilbåge")
-Spjut = Vapen(health(0, 0), damage(5, 6), "ett Spjut")
 
-Undead = Monster(health(15, 22), damage(2, 4), "Undead")
-Orc = Monster(health(9, 15), damage(6, 10), "Orc")
+
