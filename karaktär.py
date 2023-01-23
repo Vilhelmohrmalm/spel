@@ -7,6 +7,7 @@ def health(a, b):
         health.append(i)
     return (random.choice(health))
 
+
 def damage(a, b):
     damage = []
     for i in range(a, b+1):
@@ -19,7 +20,6 @@ class Vapen():
         self.v_namn = v_namn
         self.v_hp = v_hp
         self.v_str = v_str
-
 
 
 class Karaktärer():
@@ -40,16 +40,17 @@ class Monster():
     def __str__(self):
         return f"Du stöter på en {self.m_namn}, den har {self.m_hp} hp och {self.m_str} styrka"
 
+
 def monstrgenerator():
-    monster=random.randint(1,2)
-    Slime = Monster(health(4, 11), damage(1, 6), "Slime")
+    monster = random.randint(1, 2)
+    Slime = Monster(health(4, 11), damage(2, 6), "Slime")
     Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
     if monster == 1:
-        monster_stats=(Slime)
-        return(monster_stats)
+        monster_stats = (Slime)
+        return (monster_stats)
     elif monster == 2:
-        monster_stats=(Goblin)
-        return(monster_stats)
+        monster_stats = (Goblin)
+        return (monster_stats)
 
 
 Start = Vapen(0, 0, "en pinne")
@@ -57,6 +58,6 @@ Start = Vapen(0, 0, "en pinne")
 Slime = Monster(health(4, 11), damage(2, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 
-Assasin = Karaktärer(5, 10, 0, "assasin",Start)
+Assasin = Karaktärer(5, 10, 0, "assasin", Start)
 Barb = Karaktärer(8, 7, 0, "Barb", Start)
 Knight = Karaktärer(10, 5, 0, "Knight", Start)
