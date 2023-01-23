@@ -256,7 +256,7 @@ def val_vanlig_fas1(spelar_stats):
 
     while spelar_stats.p_lvl <= 9:
         val = typingInput(
-            "vad vill du göra?\n S =  se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
+            "vad vill du göra?\n S = se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
         if val in ["S", "stats", "s", "se stats"]:
             typingPrint(
                 f"Du har {spelar_stats.p_hp} hp, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
