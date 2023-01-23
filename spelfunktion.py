@@ -37,18 +37,9 @@ def fight(spelar_stats, monster_stats, vapen_stats):
 # ---------------------------------------- VAPEN ----------------------------------------
 
 
-class Vapen():
-    def __init__(self, v_hp, v_str, v_namn):
-        self.v_namn = v_namn
-        self.v_hp = v_hp
-        self.v_str = v_str
 
-Start = Vapen(0, 0, "Inget vapen")
-Svärd = Vapen(health(0, 1), damage(1, 2), "ett Svärd")
-Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
-Yxa = Vapen(health(0, 0), damage(1, 4), "en Yxa")
-Pilbåge = Vapen(health(0, 0), damage(2, 3), "en Pilbåge")
-Spjut = Vapen(health(0, 0), damage(1, 4), "ett Spjut")
+
+
 
 
 # ---------------------------------------- VAPEN ----------------------------------------
@@ -56,6 +47,11 @@ Spjut = Vapen(health(0, 0), damage(1, 4), "ett Spjut")
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
 
 def kista(spelar_stats, vapen_stats):
+    Svärd = Vapen(health(0, 1), damage(1, 2), "ett Svärd")
+    Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
+    Yxa = Vapen(health(0, 0), damage(1, 4), "en Yxa")
+    Pilbåge = Vapen(health(0, 0), damage(2, 3), "en Pilbåge")
+    Spjut = Vapen(health(0, 0), damage(1, 4), "ett Spjut")
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
         f"du har hittat {vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}")

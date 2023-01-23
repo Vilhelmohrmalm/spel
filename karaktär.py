@@ -14,15 +14,21 @@ def damage(a, b):
     return (random.choice(damage))
 
 
+class Vapen():
+    def __init__(self, v_hp, v_str, v_namn):
+        self.v_namn = v_namn
+        self.v_hp = v_hp
+        self.v_str = v_str
+
 
 
 class Karaktärer():
-    def __init__(self, p_hp, p_str, p_lvl, p_namn):
+    def __init__(self, p_hp, p_str, p_lvl, p_namn, vapen):
         self.p_hp = p_hp
         self.p_str = p_str
         self.p_lvl = p_lvl
         self.p_namn = p_namn
-        self.vapen_lista = []
+        self.vapen = vapen
 
 
 class Monster():
@@ -46,9 +52,11 @@ def monstrgenerator():
         return(monster_stats)
 
 
+Start = Vapen(0, 0, "Inget vapen")
+
 Slime = Monster(health(4, 11), damage(1, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 
-Assasin = Karaktärer(5, 10, 0, "assasin")
-Barb = Karaktärer(8, 7, 0, "Barb")
-Knight = Karaktärer(10, 5, 0, "Knight")
+Assasin = Karaktärer(5, 10, 0, "assasin", f"{Start}")
+Barb = Karaktärer(8, 7, 0, "Barb",f"{Start}")
+Knight = Karaktärer(10, 5, 0, "Knight", f"{Start}")
