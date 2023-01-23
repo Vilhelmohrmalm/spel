@@ -73,7 +73,7 @@ def boss_fight(spelar_stats):
                     return (spelar_stats)
 
                 elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-                    typingPrint(f"Taurus dödade dig\nMåste vara skill issue\n")
+                    typingPrint(f"Taurus dödade dig\n Måste vara skill issue\n")
                     slut()
                 elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
                     m_hp = m_hp - \
@@ -81,12 +81,14 @@ def boss_fight(spelar_stats):
                     spelar_stats.p_hp = spelar_stats.p_hp - \
                         m_str + spelar_stats.vapen.v_hp
         elif val in ["L", "l", "ge upp"]:
-            typingPrint("Du gav upp och dog på lvl 30\nMsåst vara skill issue\n")
+            typingPrint("Du gav upp och dog på lvl 30\n Måst vara skill issue\n")
             slut()
-        else: typingPrint("Din sopa välj ett av alternativen\n")
+        else:
+            typingPrint("Din sopa välj ett av alternativen\n")
 # ---------------------------------------- FIGHT ----------------------------------------
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
+
 
 def kista_fas1(spelar_stats):
 
@@ -120,7 +122,7 @@ def kista_fas1(spelar_stats):
 
 def kista_fas2(spelar_stats):
 
-    Svärd = Vapen(health(0, 2), damage(2, 4), "ett Svärd")
+    Svärd = Vapen(health(0, 1), damage(2, 4), "ett Svärd")
     Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(1, 6), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(2, 5), "en Pilbåge")
@@ -150,8 +152,8 @@ def kista_fas2(spelar_stats):
 
 def kista_fas3(spelar_stats):
 
-    Svärd = Vapen(health(1, 3), damage(4, 5), "ett Svärd")
-    Sköld = Vapen(health(4, 5), damage(0, 0), "en Sköld")
+    Svärd = Vapen(health(1, 1), damage(4, 5), "ett Svärd")
+    Sköld = Vapen(health(3, 4), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(3, 8), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(4, 7), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(5, 6), "ett Spjut")
