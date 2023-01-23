@@ -58,7 +58,7 @@ Spjut = Vapen(health(0, 0), damage(1, 4), "ett Spjut")
 def kista(spelar_stats, vapen_stats):
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
-        f"du har hittat {vapen_stats.v_namn}.\n det har en hp på {vapen_stats.v_hp} och en styrka på {vapen_stats.v_str}")
+        f"du har hittat {vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}")
     if len(spelar_stats.vapen_lista) == 1:
         spelar_stats.vapen_lista.append(vapen)
         return spelar_stats, vapen_stats
