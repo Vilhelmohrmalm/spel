@@ -418,7 +418,7 @@ def main():
     typingPrint("""
     Välkommen till Daedalus labyrint
 
-    Ditt mål är att nå lvl 20 men se upp för Taurus.
+    Ditt mål är att nå lvl 30 men se upp för Taurus.
     Han har en slimekapasitet på 100%.
     """)
 
