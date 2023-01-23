@@ -61,27 +61,28 @@ def fight(spelar_stats, monster_stats):
 
 
 def Boss_fight(spelar_stats):
-    typingPrint("Nu har du nått sista kammaren men där väntar taurus\n Hans massiva slimekapacitet har gett honom en hp på 30 och en styrka på 10\n")
+    typingPrint("Nu har du nått sista kammaren men där väntar Taurus\n Hans massiva slimekapacitet har gett honom en hp på 30 och en styrka på 10\n")
     m_hp = 30
     m_str = 10
-    while monster_stats.m_hp > 0:
-        if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
-            typingPrint("Du besegrade monstret\n")
-            typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
-            spelar_stats.p_lvl += 1
-            typingPrint(f"Du är är nu lvl {spelar_stats.p_lvl}\n")
-            spelar_stats.p_lvlpoäng += 1
-            return (spelar_stats)
+    val = typingInput("S = sloss mot Taurus\n L = ge upp\n")
+    while m_hp == 30:
+        if val in ["S", "s", "sloss", "sloss mot Taurus"]:
+            while m_hp > 0:
+                if spelar_stats.p_str + spelar_stats.vapen.v_str >= m_hp:
+                    return (spelar_stats)
 
-        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-            typingPrint(f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
+                elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+                    typingPrint(f"Taurus dödade dig\n Måste vara skill issue\n")
+                    slut()
+                elif spelar_stats.p_str + spelar_stats.vapen.v_str < m_hp and m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+                    m_hp = m_hp - \
+                        spelar_stats.p_str - spelar_stats.vapen.v_str
+                    spelar_stats.p_hp = spelar_stats.p_hp - \
+                        m_str + spelar_stats.vapen.v_hp
+        elif val in ["L", "l", "ge upp"]:
+            typingPrint("Du gav upp och dog på lvl 30\n Måst vara skill issue\n")
             slut()
-        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-            monster_stats.m_hp = monster_stats.m_hp - \
-                spelar_stats.p_str - spelar_stats.vapen.v_str
-            spelar_stats.p_hp = spelar_stats.p_hp - \
-                monster_stats.m_str + spelar_stats.vapen.v_hp
-
+        else: typingPrint("Din sopa välj ett av alternativen\n")
 # ---------------------------------------- FIGHT ----------------------------------------
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -119,7 +120,7 @@ def kista_fas1(spelar_stats):
 def kista_fas2(spelar_stats):
 
     Svärd = Vapen(health(0, 2), damage(2, 4), "ett Svärd")
-    Sköld = Vapen(health(2, 5), damage(0, 0), "en Sköld")
+    Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(1, 6), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(2, 5), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(3, 4), "ett Spjut")
@@ -149,7 +150,7 @@ def kista_fas2(spelar_stats):
 def kista_fas3(spelar_stats):
 
     Svärd = Vapen(health(1, 3), damage(4, 5), "ett Svärd")
-    Sköld = Vapen(health(4, 7), damage(0, 0), "en Sköld")
+    Sköld = Vapen(health(4, 5), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(3, 8), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(4, 7), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(5, 6), "ett Spjut")

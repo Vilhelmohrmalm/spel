@@ -57,7 +57,7 @@ def monstrgenerator_fas1():
 def monstrgenerator_fas2():
     monster = random.randint(1, 2)
     Lycan = Monster(health(6, 12), damage(4, 9), "Lycan")
-    Golem = Monster(health(12, 17), damage(1, 3), "Golem")
+    Golem = Monster(health(12, 17), damage(3, 4), "Golem")
     if monster == 1:
         monster_stats = (Lycan)
         return (monster_stats)
@@ -68,7 +68,7 @@ def monstrgenerator_fas2():
 
 def monstrgenerator_fas3():
     monster = random.randint(1, 2)
-    Undead = Monster(health(15, 22), damage(2, 4), "Undead")
+    Undead = Monster(health(15, 22), damage(5, 6), "Undead")
     Orc = Monster(health(9, 15), damage(6, 10), "Orc")
     if monster == 1:
         monster_stats = (Undead)
