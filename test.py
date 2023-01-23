@@ -62,7 +62,38 @@ def fight(spelar_stats, monster_stats):
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
 
-def kista(spelar_stats):
+def kista1(spelar_stats):
+
+    Svärd = Vapen(health(0, 1), damage(1, 2), "ett Svärd")
+    Sköld = Vapen(health(1, 2), damage(0, 0), "en Sköld")
+    Yxa = Vapen(health(0, 0), damage(1, 4), "en Yxa")
+    Pilbåge = Vapen(health(0, 0), damage(1, 3), "en Pilbåge")
+    Spjut = Vapen(health(0, 0), damage(2, 3), "ett Spjut")
+
+    vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
+    typingPrint(
+        f"{vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}\n")
+
+    typingPrint(
+        "Du måste ta bort ditt nuvarande vapen för att ta det nya\n")
+
+    typingPrint(
+        f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str\n ")
+    while True:
+        svar = typingInput(
+            "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L \n")
+        if svar == "1":
+            typingPrint("Du har nu ett nytt vapen i din ryggsäck\n")
+            spelar_stats.vapen = vapen
+            return spelar_stats
+        elif svar == "L" or "l":
+            typingPrint(
+                "Du lämnade det nya fräsha vapnet i kistan för du kan inte överge ditt gamla vapen efter allt ni gjort tilsammans\n")
+            return spelar_stats
+        else:
+            typingPrint("svara med ett av de givna alternativen")
+
+def kista2(spelar_stats):
 
     Svärd = Vapen(health(0, 1), damage(1, 2), "ett Svärd")
     Sköld = Vapen(health(1, 2), damage(0, 0), "en Sköld")
