@@ -248,7 +248,7 @@ def val_kista(spelar_stats):
     elif val in ["Ö", "öppna", "ö"]:
         typingPrint(
             "du öppnar kistan och i den hittar du ")
-        kista(spelar_stats)
+        kista(spelar_stats)(spelar_stats)
         return spelar_stats
     elif val in ["L", "lämna kistan", "lämna", "l"]:
         typingPrint("du lämnar kistan där för att rutna, utan att någonsinn få veta vad som finns i den.\nKistans inehåll kommer att förbli ett mysterium för alltid.\n")
