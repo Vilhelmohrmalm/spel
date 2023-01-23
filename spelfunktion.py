@@ -59,23 +59,19 @@ def kista(spelar_stats, v_hp, v_str, v_namn):
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
         f"du har hittat {v_namn}.\n det har en hp på {v_hp} och en styrka på {v_str}")
-    if len(spelar_stats.vapen_lista) > 2:
+    if len(spelar_stats.vapen_lista) > 1:
         spelar_stats.vapen_lista.append(vapen)
     else:
         typingPrint(
-            "Du har redan 2 vapen och måste ta bort ett vapen för att lägga till det nya")
+            "Du har redan ett vapen och måste ta bort det för att lägga till det nya")
         for i in range(len(spelar_stats.vapen_lista)):
             typingPrint(
                 f"indikations nummer = {i} {spelar_stats[i].v_hp} {spelar_stats[i].v_str} {spelar_stats[i].v_namn}")
         while True:
             svar = typingInput(
-                "Om du vill byta det nya vapnet mot ett gammalt vapen skriv in det gamla vapnets indikationsnummer annars skriv L ")
+                "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L ")
             if svar == "1":
                 spelar_stats.vapen_lista[1].pop()
-                spelar_stats.vapen_lista.append(vapen)
-                return spelar_stats
-            elif svar == "2":
-                spelar_stats.vapen_lista[2].pop()
                 spelar_stats.vapen_lista.append(vapen)
                 return spelar_stats
             elif svar == "L" or "l":
@@ -114,27 +110,27 @@ def fälla(spelar_stats):
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
 
-def val_vanlig(spelar_stats,v_hp,v_str,v_namn):
+def val_vanlig(spelar_stats, v_hp, v_str, v_namn):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
     if val in ["S", "stats", "s"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
-        val_vanlig(spelar_stats,v_hp,v_str,v_namn)
+        val_vanlig(spelar_stats, v_hp, v_str, v_namn)
     elif val in ["V", "vänster", "v"]:
         typingPrint("du gick igen om dörren till vänster ")
-        rum_typ(spelar_stats,v_hp,v_str,v_namn)
+        rum_typ(spelar_stats, v_hp, v_str, v_namn)
     elif val in ["H", "höger", "h"]:
         typingPrint("du gick igen om dörren till höger och kommer till ")
-        rum_typ(spelar_stats,v_hp,v_str,v_namn)
+        rum_typ(spelar_stats, v_hp, v_str, v_namn)
     elif val in ["R", "ryggsäck", "r"]:
         typingPrint("hej")
     elif val in ["F", "fram", "f"]:
         typingPrint("Du går fram och kommer till ")
-        rum_typ(spelar_stats,v_hp,v_str,v_namn)
+        rum_typ(spelar_stats, v_hp, v_str, v_namn)
     else:
         typingPrint("din sopa välj ett av alternativen\n")
-        val_vanlig(spelar_stats,v_hp,v_str,v_namn)
+        val_vanlig(spelar_stats, v_hp, v_str, v_namn)
 
 
 def val_kista(spelar_stats, v_hp, v_str, v_namn):
