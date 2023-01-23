@@ -14,7 +14,7 @@ def slut():
 # ---------------------------------------- FIGHT ----------------------------------------
 
 
-def fight(spelar_stats, monster_stats):
+def fight(spelar_stats, monster_stats, vapen_stats):
     typingPrint(
         f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
     if spelar_stats.p_str >= monster_stats.m_hp:
@@ -30,7 +30,7 @@ def fight(spelar_stats, monster_stats):
     elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
         monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
         spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
-        return (fight(spelar_stats, monster_stats))
+        return (fight(spelar_stats, monster_stats,vapen_stats))
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
@@ -43,7 +43,7 @@ class Vapen():
         self.v_hp = v_hp
         self.v_str = v_str
 
-
+Start = Vapen(0, 0, "Inget vapen")
 Svärd = Vapen(health(0, 1), damage(1, 2), "ett Svärd")
 Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
 Yxa = Vapen(health(0, 0), damage(1, 4), "en Yxa")
@@ -55,12 +55,13 @@ Spjut = Vapen(health(0, 0), damage(1, 4), "ett Spjut")
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
 
-def kista(spelar_stats, v_hp, v_str, v_namn):
+def kista(spelar_stats, vapen_stats):
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
-        f"du har hittat {v_namn}.\n det har en hp på {v_hp} och en styrka på {v_str}")
-    if len(spelar_stats.vapen_lista) > 1:
+        f"du har hittat {vapen_stats.v_namn}.\n det har en hp på {vapen_stats.v_hp} och en styrka på {vapen_stats.v_str}")
+    if len(spelar_stats.vapen_lista) == 1:
         spelar_stats.vapen_lista.append(vapen)
+        return spelar_stats, vapen_stats
     else:
         typingPrint(
             "Du har redan ett vapen och måste ta bort det för att lägga till det nya")
@@ -73,34 +74,34 @@ def kista(spelar_stats, v_hp, v_str, v_namn):
             if svar == "1":
                 spelar_stats.vapen_lista[1].pop()
                 spelar_stats.vapen_lista.append(vapen)
-                return spelar_stats
+                return spelar_stats, vapen_stats
             elif svar == "L" or "l":
-                return spelar_stats
+                return spelar_stats, vapen_stats
             else:
                 typingPrint("svara med ett av de givna alternativen")
 
 
-def rum_typ(spelar_stats, v_hp, v_str, v_namn):
+def rum_typ(spelar_stats, vapen_stats):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator()
-        spelar_stats.p_hp = fight(spelar_stats, monster_stats)
-        return (spelar_stats)
+        spelar_stats.p_hp = fight(spelar_stats, monster_stats, vapen_stats)
+        return (spelar_stats, vapen_stats)
     elif typ in [5, 6, 7]:
-        return (spelar_stats)
+        return (spelar_stats,vapen_stats)
     elif typ in [8, 9]:
-        return (spelar_stats)
+        return (spelar_stats,vapen_stats)
     elif typ == 10:
-        spelar_stats.p_hp = fälla(spelar_stats)
-        return (spelar_stats)
+        spelar_stats.p_hp = fälla(spelar_stats, vapen_stats)
+        return (spelar_stats,vapen_stats)
 
 
-def fälla(spelar_stats):
+def fälla(spelar_stats, vapen_stats):
     if spelar_stats.p_hp > 1:
         spelar_stats.p_hp -= 1
         typingPrint(
             f"du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
-        return spelar_stats
+        return spelar_stats, vapen_stats
     else:
         typingPrint("Du dog i en fälla")
         slut()
@@ -110,43 +111,43 @@ def fälla(spelar_stats):
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
 
-def val_vanlig(spelar_stats, v_hp, v_str, v_namn):
+def val_vanlig(spelar_stats, vapen_stats):
     val = typingInput(
         "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
     if val in ["S", "stats", "s"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
-        val_vanlig(spelar_stats, v_hp, v_str, v_namn)
+        val_vanlig(spelar_stats, vapen_stats)
     elif val in ["V", "vänster", "v"]:
         typingPrint("du gick igen om dörren till vänster ")
-        rum_typ(spelar_stats, v_hp, v_str, v_namn)
+        rum_typ(spelar_stats, vapen_stats)
     elif val in ["H", "höger", "h"]:
         typingPrint("du gick igen om dörren till höger och kommer till ")
-        rum_typ(spelar_stats, v_hp, v_str, v_namn)
+        rum_typ(spelar_stats, vapen_stats)
     elif val in ["R", "ryggsäck", "r"]:
         typingPrint("hej")
     elif val in ["F", "fram", "f"]:
         typingPrint("Du går fram och kommer till ")
-        rum_typ(spelar_stats, v_hp, v_str, v_namn)
+        rum_typ(spelar_stats, vapen_stats)
     else:
         typingPrint("din sopa välj ett av alternativen\n")
-        val_vanlig(spelar_stats, v_hp, v_str, v_namn)
+        val_vanlig(spelar_stats, vapen_stats)
 
 
-def val_kista(spelar_stats, v_hp, v_str, v_namn):
+def val_kista(spelar_stats, vapen_stats):
     val = typingInput(
         "och hittade en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n ")
     if val in ["S", "stats", "s"]:
         typingPrint("din stats är dina stats")
-        return val_kista(spelar_stats, v_hp, v_str, v_namn)
+        return val_kista(spelar_stats, vapen_stats)
     elif val in ["Ö", "öppna", "ö"]:
         typingPrint(
             "du öppnar kistan och med ett gnistlande ljud så ser du hur en stor  i den...")
-        kista(spelar_stats, v_hp, v_str, v_namn)
-        return spelar_stats
+        kista(spelar_stats, vapen_stats)
+        return spelar_stats, vapen_stats
     else:
         typingPrint("din sopa välj ett av alternativen")
-        return val_kista(spelar_stats, v_hp, v_str, v_namn)
+        return val_kista(spelar_stats, vapen_stats)
 
 # ---------------------------------------- VALFUNKTIONER ----------------------------------------
 
@@ -193,7 +194,9 @@ def main():
 
     spelar_stats = karaktärsval()
 
-    val_vanlig(spelar_stats, v_hp, v_str, v_namn)
+    vapen_stats = (Start)
+
+    val_vanlig(spelar_stats, vapen_stats)
 
     typingPrint("Grattis du vann")
     slut()
