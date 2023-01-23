@@ -96,8 +96,8 @@ def kista_fas1(spelar_stats):
 
 def kista_fas2(spelar_stats):
 
-    Svärd = Vapen(health(0, 2), damage(2, 4), "ett Svärd")
-    Sköld = Vapen(health(2, 5), damage(0, 0), "en Sköld")
+    Svärd = Vapen(health(0, 1), damage(2, 4), "ett Svärd")
+    Sköld = Vapen(health(2, 3), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(1, 6), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(2, 5), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(3, 4), "ett Spjut")
@@ -126,8 +126,8 @@ def kista_fas2(spelar_stats):
 
 def kista_fas3(spelar_stats):
 
-    Svärd = Vapen(health(1, 3), damage(4, 5), "ett Svärd")
-    Sköld = Vapen(health(4, 7), damage(0, 0), "en Sköld")
+    Svärd = Vapen(health(1, 1), damage(4, 5), "ett Svärd")
+    Sköld = Vapen(health(3, 4), damage(0, 0), "en Sköld")
     Yxa = Vapen(health(0, 0), damage(3, 8), "en Yxa")
     Pilbåge = Vapen(health(0, 0), damage(4, 7), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(5, 6), "ett Spjut")
