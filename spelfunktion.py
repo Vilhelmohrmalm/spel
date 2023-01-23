@@ -50,7 +50,7 @@ def fight(spelar_stats, monster_stats):
             return (spelar_stats)
 
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-            typingPrint("Du dog\n Måste vara skill issue\n")
+            typingPrint(f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
             slut()
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
             monster_stats.m_hp = monster_stats.m_hp - \
@@ -243,7 +243,7 @@ def fälla(spelar_stats):
             f"där du klev i en fälla, du har nu {spelar_stats.p_hp} hp kvar\n")
         return spelar_stats
     else:
-        typingPrint("där du dör i en fälla\n Måste vara skill issue\n")
+        typingPrint(f"där du dör i en fälla\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
         slut()
 
 
@@ -256,21 +256,21 @@ def val_vanlig_fas1(spelar_stats):
 
     while spelar_stats.p_lvl <= 9:
         val = typingInput(
-            "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
-        if val in ["S", "stats", "s"]:
+            "vad vill du göra?\n S =  se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
+        if val in ["S", "stats", "s", "se stats"]:
             typingPrint(
                 f"Du har {spelar_stats.p_hp} hp, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
 
-        elif val in ["V", "vänster", "v"]:
+        elif val in ["V", "vänster", "v", "gå vänster" ]:
             typingPrint("Du går igenom dörren till vänster ")
             rum_typ_fas1(spelar_stats)
-        elif val in ["H", "höger", "h"]:
+        elif val in ["H", "höger", "h", "gå höger"]:
             typingPrint("Du går igenom dörren till höger ")
             rum_typ_fas1(spelar_stats)
-        elif val in ["R", "ryggsäck", "r"]:
+        elif val in ["R", "ryggsäck", "r", "öppna ryggsäck"]:
             typingPrint(
                 f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str \n")
-        elif val in ["F", "fram", "f"]:
+        elif val in ["F", "fram", "f", "fram"]:
             typingPrint("Du går igenom dörren framför dig ")
             rum_typ_fas1(spelar_stats)
         else:
@@ -280,26 +280,26 @@ def val_vanlig_fas1(spelar_stats):
 
 
 def val_vanlig_fas2(spelar_stats):
-    spelar_stats.p_hp += 4
+    spelar_stats.p_hp += 3
     typingPrint(
         "Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
     while spelar_stats.p_lvl <= 19:
         val = typingInput(
-            "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
-        if val in ["S", "stats", "s"]:
+            "vad vill du göra?\n S = se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
+        if val in ["S", "stats", "s", "se stats"]:
             typingPrint(
                 f"Du har {spelar_stats.p_hp} hp, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
 
-        elif val in ["V", "vänster", "v"]:
+        elif val in ["V", "vänster", "v", "gå vänster"]:
             typingPrint("Du går igenom dörren till vänster ")
             rum_typ_fas2(spelar_stats)
-        elif val in ["H", "höger", "h"]:
+        elif val in ["H", "höger", "h", "gå höger"]:
             typingPrint("Du går igenom dörren till höger ")
             rum_typ_fas2(spelar_stats)
-        elif val in ["R", "ryggsäck", "r"]:
+        elif val in ["R", "ryggsäck", "r", "öppna ryggsäck"]:
             typingPrint(
                 f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str \n")
-        elif val in ["F", "fram", "f"]:
+        elif val in ["F", "fram", "f", "gå fram"]:
             typingPrint("Du går igenom dörren framför dig ")
             rum_typ_fas2(spelar_stats)
         else:
@@ -309,26 +309,26 @@ def val_vanlig_fas2(spelar_stats):
 
 
 def val_vanlig_fas3(spelar_stats):
-    spelar_stats.p_hp += 4
+    spelar_stats.p_hp += 3
     typingPrint(
         "Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
     while spelar_stats.p_lvl <= 29:
         val = typingInput(
-            "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
-        if val in ["S", "stats", "s"]:
+            "vad vill du göra?\n S = se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
+        if val in ["S", "stats", "s", "se stats"]:
             typingPrint(
                 f"Du har {spelar_stats.p_hp} hp, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
 
-        elif val in ["V", "vänster", "v"]:
+        elif val in ["V", "vänster", "v", "gå vänster"]:
             typingPrint("Du går igenom dörren till vänster ")
             rum_typ_fas3(spelar_stats)
-        elif val in ["H", "höger", "h"]:
+        elif val in ["H", "höger", "h", "gå höger"]:
             typingPrint("Du går igenom dörren till höger ")
             rum_typ_fas3(spelar_stats)
-        elif val in ["R", "ryggsäck", "r"]:
+        elif val in ["R", "ryggsäck", "r", "öppna ryggsäck"]:
             typingPrint(
                 f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str \n")
-        elif val in ["F", "fram", "f"]:
+        elif val in ["F", "fram", "f", "gå fram"]:
             typingPrint("Du går igenom dörren framför dig ")
             rum_typ_fas3(spelar_stats)
         else:
@@ -339,12 +339,12 @@ def val_vanlig_fas3(spelar_stats):
 
 def val_kista_fas1(spelar_stats):
     val = typingInput(
-        "och hittar en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n L = lämna kistan\n")
-    if val in ["S", "stats", "s"]:
+        "och hittar en kista. Vad vill du göra?\n S = se stats\n Ö = öppna kista\n L = lämna kistan\n")
+    if val in ["S", "stats", "s", "se stats"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
         return val_kista_fas1(spelar_stats)
-    elif val in ["Ö", "öppna", "ö"]:
+    elif val in ["Ö", "öppna", "ö", "öppna kista"]:
         typingPrint(
             "du öppnar kistan och i den hittar du ")
         kista_fas1(spelar_stats)
@@ -359,12 +359,12 @@ def val_kista_fas1(spelar_stats):
 
 def val_kista_fas2(spelar_stats):
     val = typingInput(
-        "och hittar en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n L = lämna kistan\n")
-    if val in ["S", "stats", "s"]:
+        "och hittar en kista. Vad vill du göra?\n S = se stats\n Ö = öppna kista\n L = lämna kistan\n")
+    if val in ["S", "stats", "s", "se stats"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
         return val_kista_fas2(spelar_stats)
-    elif val in ["Ö", "öppna", "ö"]:
+    elif val in ["Ö", "öppna", "ö" , "öppna kista"]:
         typingPrint(
             "du öppnar kistan och i den hittar du ")
         kista_fas2(spelar_stats)
@@ -379,12 +379,12 @@ def val_kista_fas2(spelar_stats):
 
 def val_kista_fas3(spelar_stats):
     val = typingInput(
-        "och hittar en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n L = lämna kistan\n")
-    if val in ["S", "stats", "s"]:
+        "och hittar en kista. Vad vill du göra?\n S = se stats\n Ö = öppna kista\n L = lämna kistan\n")
+    if val in ["S", "stats", "s", "se stats"]:
         typingPrint(
             f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
         return val_kista_fas3(spelar_stats)
-    elif val in ["Ö", "öppna", "ö"]:
+    elif val in ["Ö", "öppna", "ö", "öppna kista"]:
         typingPrint(
             "du öppnar kistan och i den hittar du ")
         kista_fas3(spelar_stats)
