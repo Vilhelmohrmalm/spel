@@ -1,5 +1,5 @@
 import random
-from fight import *
+from karaktär import *
 from text_animering import *
 
 
