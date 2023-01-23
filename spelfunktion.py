@@ -17,20 +17,21 @@ def slut():
 def fight(spelar_stats, monster_stats):
     typingPrint(
         f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
-    if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
-        typingPrint("du besegrade monstret\n")
-        typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
-        spelar_stats.p_lvl += 1
-        typingPrint(f"Du är har nu lvl {spelar_stats.p_lvl}")
-        return (spelar_stats)
+    while monster_stats.p_hp > 0:
+        if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
+            typingPrint("du besegrade monstret\n")
+            typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
+            spelar_stats.p_lvl += 1
+            typingPrint(f"Du är är nu lvl {spelar_stats.p_lvl}\n")
+            return (spelar_stats)
 
-    elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-        typingPrint("du dog")
-        slut()
-    elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
-        monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str - spelar_stats.vapen.v_str
-        spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str + spelar_stats.vapen.v_hp
-        return (fight(spelar_stats, monster_stats))
+        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+            typingPrint("du dog")
+            slut()
+        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+            monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str - spelar_stats.vapen.v_str
+            spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str + spelar_stats.vapen.v_hp
+            return (fight(spelar_stats, monster_stats))
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
@@ -101,7 +102,7 @@ def val_vanlig(spelar_stats):
             "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
         if val in ["S", "stats", "s"]:
             typingPrint(
-                f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
+                f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
             val_vanlig(spelar_stats)
         elif val in ["V", "vänster", "v"]:
             typingPrint("du gick igen om dörren till vänster ")
