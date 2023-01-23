@@ -13,6 +13,7 @@ def slut():
 
 # ---------------------------------------- lvl poäng  ----------------------------------------
 
+
 def lvl_poäng(spelar_stats):
 
     val = typingInput("Vilken vill du höja\n H = hp\n S = str\n")
@@ -26,7 +27,7 @@ def lvl_poäng(spelar_stats):
         typingPrint(f"Din str är nu {spelar_stats.p_str}\n")
         spelar_stats.p_lvlpoäng = 0
         return spelar_stats
-    else: 
+    else:
         typingPrint("Din sopa välj ett av alternativen\n")
         return lvl_poäng(spelar_stats)
 
@@ -93,6 +94,7 @@ def kista_fas1(spelar_stats):
         else:
             typingPrint("svara med ett av de givna alternativen")
 
+
 def kista_fas2(spelar_stats):
 
     Svärd = Vapen(health(0, 2), damage(2, 4), "ett Svärd")
@@ -133,7 +135,6 @@ def kista_fas3(spelar_stats):
     Pilbåge = Vapen(health(0, 0), damage(4, 7), "en Pilbåge")
     Spjut = Vapen(health(0, 0), damage(5, 6), "ett Spjut")
 
-
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
         f"{vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}\n")
@@ -158,18 +159,20 @@ def kista_fas3(spelar_stats):
             typingPrint("svara med ett av de givna alternativen")
 
 
-
 def rum_typ_fas1(spelar_stats):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4, 10]:
         monster_stats = monstrgenerator_fas1()
         spelar_stats = fight(spelar_stats, monster_stats)
         if spelar_stats.p_lvlpoäng == 3:
-            typingPrint("Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n") 
-            typingPrint(f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
+            typingPrint(
+                "Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n")
+            typingPrint(
+                f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
             spelar_stats = lvl_poäng(spelar_stats)
             return (spelar_stats)
-        else: return spelar_stats
+        else:
+            return spelar_stats
     elif typ in [5, 6]:
         typingPrint("och kommer till ett tomt rum\n")
         return (spelar_stats)
@@ -180,17 +183,21 @@ def rum_typ_fas1(spelar_stats):
         fälla(spelar_stats)
         return (spelar_stats)
 
+
 def rum_typ_fas2(spelar_stats):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator_fas2()
         spelar_stats = fight(spelar_stats, monster_stats)
         if spelar_stats.p_lvlpoäng == 3:
-            typingPrint("Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n") 
-            typingPrint(f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
+            typingPrint(
+                "Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n")
+            typingPrint(
+                f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
             spelar_stats = lvl_poäng(spelar_stats)
             return (spelar_stats)
-        else: return spelar_stats
+        else:
+            return spelar_stats
         return (spelar_stats)
     elif typ in [5, 6]:
         typingPrint("och kommer till ett tomt rum\n")
@@ -202,17 +209,21 @@ def rum_typ_fas2(spelar_stats):
         fälla(spelar_stats)
         return (spelar_stats)
 
+
 def rum_typ_fas3(spelar_stats):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator_fas3()
         spelar_stats = fight(spelar_stats, monster_stats)
         if spelar_stats.p_lvlpoäng == 3:
-            typingPrint("Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n") 
-            typingPrint(f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
+            typingPrint(
+                "Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n")
+            typingPrint(
+                f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
             spelar_stats = lvl_poäng(spelar_stats)
             return (spelar_stats)
-        else: return spelar_stats
+        else:
+            return spelar_stats
         return (spelar_stats)
     elif typ in [5, 6]:
         typingPrint("och kommer till ett tomt rum\n")
@@ -223,6 +234,7 @@ def rum_typ_fas3(spelar_stats):
     elif typ in [9, 10]:
         fälla(spelar_stats)
         return (spelar_stats)
+
 
 def fälla(spelar_stats):
     if spelar_stats.p_hp > 1:
@@ -241,7 +253,7 @@ def fälla(spelar_stats):
 
 
 def val_vanlig_fas1(spelar_stats):
-    
+
     while spelar_stats.p_lvl <= 9:
         val = typingInput(
             "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
@@ -269,7 +281,8 @@ def val_vanlig_fas1(spelar_stats):
 
 def val_vanlig_fas2(spelar_stats):
     spelar_stats.p_hp += 4
-    typingPrint("Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
+    typingPrint(
+        "Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
     while spelar_stats.p_lvl <= 19:
         val = typingInput(
             "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
@@ -297,7 +310,8 @@ def val_vanlig_fas2(spelar_stats):
 
 def val_vanlig_fas3(spelar_stats):
     spelar_stats.p_hp += 4
-    typingPrint("Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
+    typingPrint(
+        "Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 4 extra hp\n")
     while spelar_stats.p_lvl <= 29:
         val = typingInput(
             "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
@@ -322,6 +336,7 @@ def val_vanlig_fas3(spelar_stats):
 
     return (spelar_stats)
 
+
 def val_kista_fas1(spelar_stats):
     val = typingInput(
         "och hittar en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n L = lämna kistan\n")
@@ -341,6 +356,7 @@ def val_kista_fas1(spelar_stats):
         typingPrint("din sopa välj ett av alternativen")
         return val_kista_fas1(spelar_stats)
 
+
 def val_kista_fas2(spelar_stats):
     val = typingInput(
         "och hittar en kista. Vad vill du göra?\n S = stats\n Ö = öppna\n L = lämna kistan\n")
@@ -359,6 +375,7 @@ def val_kista_fas2(spelar_stats):
     else:
         typingPrint("din sopa välj ett av alternativen")
         return val_kista_fas2(spelar_stats)
+
 
 def val_kista_fas3(spelar_stats):
     val = typingInput(
@@ -428,7 +445,7 @@ def main():
 
     val_vanlig_fas2(spelar_stats)
 
-    val_kista_fas3(spelar_stats)
+    val_vanlig_fas3(spelar_stats)
 
     typingPrint("Grattis du vann\n")
     slut()
