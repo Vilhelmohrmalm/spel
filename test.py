@@ -120,6 +120,12 @@ def rum_typ2(spelar_stats):
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator2()
         spelar_stats = fight(spelar_stats, monster_stats)
+        if spelar_stats.p_lvlpoäng == 3:
+            typingPrint("Du har nu fått en lvl uppgradering som du kan använda för att höja en valfri stat med 1. \n") 
+            typingPrint(f"Dina nuvarande stats är {spelar_stats.p_hp} hp och {spelar_stats.p_str} str \n")
+            spelar_stats = lvl_poäng(spelar_stats)
+            return (spelar_stats)
+        else: return spelar_stats
         return (spelar_stats)
     elif typ in [5, 6]:
         typingPrint("och kommer till ett tomt rum\n")
