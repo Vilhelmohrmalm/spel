@@ -16,8 +16,8 @@ def slut():
 
 def fight(spelar_stats, monster_stats):
     typingPrint(
-        f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
-    while monster_stats.p_hp > 0:
+        f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str\n")
+    while monster_stats.m_hp > 0:
         if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
             typingPrint("du besegrade monstret\n")
             typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
@@ -31,7 +31,7 @@ def fight(spelar_stats, monster_stats):
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
             monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str - spelar_stats.vapen.v_str
             spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str + spelar_stats.vapen.v_hp
-            return (fight(spelar_stats, monster_stats))
+           
 
 # ---------------------------------------- FIGHT ----------------------------------------
 
@@ -47,16 +47,16 @@ def kista(spelar_stats):
 
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
-        f"du har hittat {vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}")
+        f"du har hittat {vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}\n")
     
     typingPrint(
-        "Du måste ta bort ditt nuvarande vapen för att ta det nya")
+        "Du måste ta bort ditt nuvarande vapen för att ta det nya\n")
     
     typingPrint(
-         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str ")
+         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str\n ")
     while True:
         svar = typingInput(
-                "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L ")
+                "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L \n")
         if svar == "1":
             spelar_stats.vapen = vapen
             return spelar_stats
@@ -70,14 +70,16 @@ def rum_typ(spelar_stats):
     typ = random.randint(1, 10)
     if typ in [1, 2, 3, 4]:
         monster_stats = monstrgenerator()
-        spelar_stats.p_hp = fight(spelar_stats, monster_stats)
+        spelar_stats = fight(spelar_stats, monster_stats)
         return (spelar_stats)
     elif typ in [5, 6, 7]:
+        typingPrint("du kommer till ett tomt rum\n")
         return (spelar_stats)
     elif typ in [8, 9]:
+        val_kista(spelar_stats)
         return (spelar_stats)
     elif typ == 10:
-        spelar_stats.p_hp = fälla(spelar_stats)
+        spelar_stats = fälla(spelar_stats)
         return (spelar_stats)
 
 
@@ -97,13 +99,13 @@ def fälla(spelar_stats):
 
 
 def val_vanlig(spelar_stats):
-    while spelar_stats.p_lvl < 9:
+    while spelar_stats.p_lvl <= 9:
         val = typingInput(
             "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
         if val in ["S", "stats", "s"]:
             typingPrint(
                 f"Du har hp {spelar_stats.p_hp}, din str är {spelar_stats.p_str} och din lvl är {spelar_stats.p_lvl}\n")
-            val_vanlig(spelar_stats)
+
         elif val in ["V", "vänster", "v"]:
             typingPrint("du gick igen om dörren till vänster ")
             rum_typ(spelar_stats)
@@ -112,13 +114,13 @@ def val_vanlig(spelar_stats):
             rum_typ(spelar_stats)
         elif val in ["R", "ryggsäck", "r"]:
             typingPrint(
-                f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str ")
+                f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str \n")
         elif val in ["F", "fram", "f"]:
             typingPrint("Du går fram och kommer till ")
             rum_typ(spelar_stats)
         else:
             typingPrint("din sopa välj ett av alternativen\n")
-            val_vanlig(spelar_stats)
+            
     return()
 
 def val_kista(spelar_stats):
@@ -175,7 +177,7 @@ def main():
     typingPrint("""
     Välkommen till Daedalus labyrint
 
-    Ditt mål är att ta dig genom labyrinten men se upp för Taurus.
+    Ditt mål är att nå lvl 10 men se upp för Taurus.
     Han har en slimekapasitet på 100%.
     """)
 
@@ -183,7 +185,7 @@ def main():
 
     val_vanlig(spelar_stats)
 
-    typingPrint("Grattis du vann")
+    typingPrint("Grattis du vann\n")
     slut()
 
 
