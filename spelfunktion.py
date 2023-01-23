@@ -59,6 +59,28 @@ def fight(spelar_stats, monster_stats):
                 monster_stats.m_str + spelar_stats.vapen.v_hp
 
 
+def Boss_fight(spelar_stats):
+    typingPrint("Nu har du nått sista kammaren men där väntar taurus\n Hans massiva slimekapacitet har gett honom en hp på 30 och en styrka på 10\n")
+    m_hp = 30
+    m_str = 10
+    while monster_stats.m_hp > 0:
+        if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
+            typingPrint("Du besegrade monstret\n")
+            typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
+            spelar_stats.p_lvl += 1
+            typingPrint(f"Du är är nu lvl {spelar_stats.p_lvl}\n")
+            spelar_stats.p_lvlpoäng += 1
+            return (spelar_stats)
+
+        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+            typingPrint(f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
+            slut()
+        elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+            monster_stats.m_hp = monster_stats.m_hp - \
+                spelar_stats.p_str - spelar_stats.vapen.v_str
+            spelar_stats.p_hp = spelar_stats.p_hp - \
+                monster_stats.m_str + spelar_stats.vapen.v_hp
+
 # ---------------------------------------- FIGHT ----------------------------------------
 
 # ---------------------------------------- RUM TYP OCH KISTA ----------------------------------------
@@ -446,6 +468,8 @@ def main():
     val_vanlig_fas2(spelar_stats)
 
     val_vanlig_fas3(spelar_stats)
+
+    Boss_fight(spelar_stats)
 
     typingPrint("Grattis du vann\n")
     slut()
