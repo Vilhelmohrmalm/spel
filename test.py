@@ -96,7 +96,7 @@ def kista(spelar_stats):
 
 def rum_typ1(spelar_stats):
     typ = random.randint(1, 10)
-    if typ in [1, 2, 3, 4]:
+    if typ in [1, 2, 3, 4, 10]:
         monster_stats = monstrgenerator1()
         spelar_stats = fight(spelar_stats, monster_stats)
         if spelar_stats.p_lvlpoäng == 3:
@@ -111,7 +111,7 @@ def rum_typ1(spelar_stats):
     elif typ in [7, 8]:
         val_kista(spelar_stats)
         return (spelar_stats)
-    elif typ in [9, 10]:
+    elif typ in [9]:
         fälla(spelar_stats)
         return (spelar_stats)
 
