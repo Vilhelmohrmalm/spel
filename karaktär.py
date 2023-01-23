@@ -54,7 +54,7 @@ def monstrgenerator():
 
 Start = Vapen(0, 0, "Inget vapen")
 
-Slime = Monster(health(4, 11), damage(1, 6), "Slime")
+Slime = Monster(health(4, 11), damage(2, 6), "Slime")
 Goblin = Monster(health(3, 7), damage(3, 8), "Goblin")
 
 Assasin = Karaktärer(5, 10, 0, "assasin", f"{Start}")

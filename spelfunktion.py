@@ -17,19 +17,19 @@ def slut():
 def fight(spelar_stats, monster_stats):
     typingPrint(
         f"Och du stöter på en {monster_stats.m_namn} med {monster_stats.m_hp} hp och {monster_stats.m_str} str")
-    if spelar_stats.p_str >= monster_stats.m_hp:
+    if spelar_stats.p_str + spelar_stats.vapen.v_str >= monster_stats.m_hp:
         typingPrint("du besegrade monstret\n")
         typingPrint(f"Du har {spelar_stats.p_hp} hp kvar\n")
         spelar_stats.p_lvl += 1
         typingPrint(f"Du är har nu lvl {spelar_stats.p_lvl}")
         return (spelar_stats)
 
-    elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp:
+    elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
         typingPrint("du dog")
         slut()
-    elif spelar_stats.p_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp:
-        monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str
-        spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str
+    elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
+        monster_stats.m_hp = monster_stats.m_hp - spelar_stats.p_str - spelar_stats.vapen.v_str
+        spelar_stats.p_hp = spelar_stats.p_hp - monster_stats.m_str + spelar_stats.vapen.v_hp
         return (fight(spelar_stats, monster_stats))
 
 # ---------------------------------------- FIGHT ----------------------------------------
@@ -52,25 +52,21 @@ def kista(spelar_stats):
     vapen = random.choice([Svärd, Sköld, Yxa, Pilbåge, Spjut])
     typingPrint(
         f"du har hittat {vapen.v_namn}.\n det har en hp på {vapen.v_hp} och en styrka på {vapen.v_str}")
-    if len(spelar_stats.vapen_lista) == 1:
-        spelar_stats.vapen_lista.append(vapen)
-        return spelar_stats
-    else:
-        typingPrint(
-            "Du har redan ett vapen och måste ta bort det för att lägga till det nya")
-        for i in range(len(spelar_stats.vapen_lista)):
-            typingPrint(
-                f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str ")
-        while True:
-            svar = typingInput(
+    
+    typingPrint(
+        "Du måste ta bort ditt nuvarande vapen för att ta det nya")
+    
+    typingPrint(
+         f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str ")
+    while True:
+        svar = typingInput(
                 "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L ")
-            if svar == "1":
-                spelar_stats.vapen_lista[1].pop()
-                spelar_stats.vapen_lista.append(vapen)
+        if svar == "1":
+            spelar_stats.vapen = vapen
+            return spelar_stats
+        elif svar == "L" or "l":
                 return spelar_stats
-            elif svar == "L" or "l":
-                return spelar_stats
-            else:
+        else:
                 typingPrint("svara med ett av de givna alternativen")
 
 
