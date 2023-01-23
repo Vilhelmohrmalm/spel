@@ -105,28 +105,29 @@ def fälla(spelar_stats):
 
 
 def val_vanlig(spelar_stats):
-    val = typingInput(
-        "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
-    if val in ["S", "stats", "s"]:
-        typingPrint(
-            f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
-        val_vanlig(spelar_stats)
-    elif val in ["V", "vänster", "v"]:
-        typingPrint("du gick igen om dörren till vänster ")
-        rum_typ(spelar_stats)
-    elif val in ["H", "höger", "h"]:
-        typingPrint("du gick igen om dörren till höger och kommer till ")
-        rum_typ(spelar_stats)
-    elif val in ["R", "ryggsäck", "r"]:
-        typingPrint(
-            f"Du har {spelar_stats.v_namn} med {spelar_stats.v_hp} hp {spelar_stats.v_str} str ")
-    elif val in ["F", "fram", "f"]:
-        typingPrint("Du går fram och kommer till ")
-        rum_typ(spelar_stats)
-    else:
-        typingPrint("din sopa välj ett av alternativen\n")
-        val_vanlig(spelar_stats)
-
+    while spelar_stats.p_lvl < 9:
+        val = typingInput(
+            "vad vill du göra?\n S = stats\n V = vänster\n F = fram\n H = höger\n R = ryggsäck\n")
+        if val in ["S", "stats", "s"]:
+            typingPrint(
+                f"Du har hp {spelar_stats.p_hp} och din str är {spelar_stats.p_str}\n")
+            val_vanlig(spelar_stats)
+        elif val in ["V", "vänster", "v"]:
+            typingPrint("du gick igen om dörren till vänster ")
+            rum_typ(spelar_stats)
+        elif val in ["H", "höger", "h"]:
+            typingPrint("du gick igen om dörren till höger och kommer till ")
+            rum_typ(spelar_stats)
+        elif val in ["R", "ryggsäck", "r"]:
+            typingPrint(
+                f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp {spelar_stats.vapen.v_str} str ")
+        elif val in ["F", "fram", "f"]:
+            typingPrint("Du går fram och kommer till ")
+            rum_typ(spelar_stats)
+        else:
+            typingPrint("din sopa välj ett av alternativen\n")
+            val_vanlig(spelar_stats)
+    return()
 
 def val_kista(spelar_stats):
     val = typingInput(
