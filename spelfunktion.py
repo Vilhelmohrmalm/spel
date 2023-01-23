@@ -60,7 +60,7 @@ def kista(spelar_stats):
             "Du har redan ett vapen och måste ta bort det för att lägga till det nya")
         for i in range(len(spelar_stats.vapen_lista)):
             typingPrint(
-                f"Du har {spelar_stats.v_namn} med {spelar_stats.v_hp} hp och {spelar_stats.v_str} str ")
+                f"Du har {spelar_stats.vapen.v_namn} med {spelar_stats.vapen.v_hp} hp och {spelar_stats.vapen.v_str} str ")
         while True:
             svar = typingInput(
                 "Om du vill byta det nya vapnet mot det gammla vapnet skriv in 1 annars skriv L ")
