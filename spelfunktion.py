@@ -169,21 +169,21 @@ def karaktärsval():
 
     if namn == 1:
         Spelar_stats = (Assasin)
-        typingPrint(" Du är nu en Assasin med 5 hp och 10 str ")
+        typingPrint(" Du är nu en Assasin med 5 hp och 10 str \n")
         return (Spelar_stats)
 
     elif namn == 2:
         Spelar_stats = (Barb)
-        typingPrint(" Du är nu en Barbarian med 8 hp och 7 str ")
+        typingPrint(" Du är nu en Barbarian med 8 hp och 7 str \n")
         return (Spelar_stats)
 
     elif namn == 3:
         Spelar_stats = (Knight)
-        typingPrint(" Du är nu en Knight med 10 hp och 5 str ")
+        typingPrint(" Du är nu en Knight med 10 hp och 5 str \n")
         return (Spelar_stats)
 
     else:
-        typingPrint("svara 1, 2 eller 3 din sopa")
+        typingPrint("svara 1, 2 eller 3 din sopa\n")
         return karaktärsval()
 
 
