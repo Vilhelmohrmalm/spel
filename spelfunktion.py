@@ -219,7 +219,6 @@ def rum_typ_fas2(spelar_stats):
             return (spelar_stats)
         else:
             return spelar_stats
-        return (spelar_stats)
     elif typ in [5, 6]:
         typingPrint("och kommer till ett tomt rum\n")
         return (spelar_stats)
@@ -333,7 +332,7 @@ def val_vanlig_fas2(spelar_stats):
 def val_vanlig_fas3(spelar_stats):
     spelar_stats.p_hp += 3
     typingPrint(
-        "Du har nu nått fas två som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 3 extra hp\n")
+        "Du har nu nått fas tre som betyder att monstrerna kommer vara starkare och vapnen bättre\n Men du får 3 extra hp\n")
     while spelar_stats.p_lvl <= 29:
         val = typingInput(
             "vad vill du göra?\n S = se stats\n V = gå vänster\n F = gå fram\n H = gå höger\n R = öppna ryggsäck\n")
