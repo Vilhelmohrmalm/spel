@@ -426,7 +426,7 @@ def val_kista_fas3(spelar_stats):
 
 
 def karaktärsval():
-    namn = int(typingInput("""
+    namn = (typingInput("""
     Välj din karaktär.
     svara med 1, 2 eller 3.
 
@@ -435,17 +435,17 @@ def karaktärsval():
     str = 10         str = 7            str = 5 
     """))
 
-    if namn == 1:
+    if namn == "1":
         Spelar_stats = (Assasin)
         typingPrint(" Du är nu en Assasin med 5 hp och 10 str \n")
         return (Spelar_stats)
 
-    elif namn == 2:
+    elif namn == "2":
         Spelar_stats = (Barb)
         typingPrint(" Du är nu en Barbarian med 8 hp och 7 str \n")
         return (Spelar_stats)
 
-    elif namn == 3:
+    elif namn == "3":
         Spelar_stats = (Knight)
         typingPrint(" Du är nu en Knight med 10 hp och 5 str \n")
         return (Spelar_stats)
