@@ -51,7 +51,7 @@ def fight(spelar_stats, monster_stats):
 
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str >= spelar_stats.p_hp + spelar_stats.vapen.v_hp:
             typingPrint(
-                f"Du dog\n Du nådde lvl {spelar_stats.p_lvl}\n Måste vara skill issue\n")
+                f"Du dog\nDu nådde lvl {spelar_stats.p_lvl}\nMåste vara skill issue\n")
             slut()
         elif spelar_stats.p_str + spelar_stats.vapen.v_str < monster_stats.m_hp and monster_stats.m_str < spelar_stats.p_hp + spelar_stats.vapen.v_hp:
             monster_stats.m_hp = monster_stats.m_hp - \
